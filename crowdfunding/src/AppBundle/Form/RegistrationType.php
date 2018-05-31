@@ -9,7 +9,8 @@ class RegistrationType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name');
+        $builder->add('nom');
+        $builder->add('prenom');
     }
 
     public function getParent()
@@ -26,7 +27,12 @@ class RegistrationType extends AbstractType
     }
 
     // For Symfony 2.x
-    public function getName()
+    public function getNom()
+    {
+        return $this->getBlockPrefix();
+    }
+
+    public function getPrenom()
     {
         return $this->getBlockPrefix();
     }
