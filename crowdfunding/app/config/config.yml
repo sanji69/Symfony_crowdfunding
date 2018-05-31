@@ -30,6 +30,8 @@ framework:
     assets: ~
     php_errors:
         log: true
+    templating:
+        engines: ['twig']
 
 # Twig Configuration
 twig:
@@ -79,19 +81,10 @@ fos_user:
     registration:
         form:
             type: AppBundle\Form\RegistrationType
-<<<<<<< HEAD
-   profile:
-        form:
-            type: AppBundleFormProfileType
 
 #Assetic
 assetic:
     debug:          '%kernel.debug%'
     use_controller: '%kernel.debug%'
     filters:
-        cssrewrite: ~           
-=======
-   # profile:
-   #      form:
-   #          type: AppBundleFormProfileType
->>>>>>> bb2327d8583ef66b423285d36d7d89635744bbc6
+        cssrewrite: ~
