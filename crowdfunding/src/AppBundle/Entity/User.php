@@ -21,11 +21,13 @@ class User extends BaseUser
 
     /**
      * @ORM\Column(type="string")
+     *     groups={"Registration", “Profile”}
      */
     protected $nom;
 
     /**
      * @ORM\Column(type="string")
+     *     groups={"Registration", “Profile”}
      */
     protected $prenom;
 
