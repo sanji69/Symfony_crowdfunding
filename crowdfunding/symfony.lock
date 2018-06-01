@@ -1,16 +1,4 @@
 {
-    "dnoegel/php-xdg-base-dir": {
-        "version": "0.1"
-    },
-    "jakub-onderka/php-console-color": {
-        "version": "0.1"
-    },
-    "jakub-onderka/php-console-highlighter": {
-        "version": "v0.3.2"
-    },
-    "nikic/php-parser": {
-        "version": "v4.0.1"
-    },
     "psr/cache": {
         "version": "1.0.1"
     },
@@ -22,9 +10,6 @@
     },
     "psr/simple-cache": {
         "version": "1.0.1"
-    },
-    "psy/psysh": {
-        "version": "v0.9.4"
     },
     "symfony/cache": {
         "version": "v4.1.0"
@@ -51,9 +36,6 @@
         "version": "v4.1.0"
     },
     "symfony/event-dispatcher": {
-        "version": "v4.1.0"
-    },
-    "symfony/expression-language": {
         "version": "v4.1.0"
     },
     "symfony/filesystem": {
@@ -92,12 +74,6 @@
     "symfony/polyfill-mbstring": {
         "version": "v1.8.0"
     },
-    "symfony/polyfill-php72": {
-        "version": "v1.8.0"
-    },
-    "symfony/process": {
-        "version": "v4.1.0"
-    },
     "symfony/routing": {
         "version": "4.0",
         "recipe": {
@@ -107,22 +83,22 @@
             "ref": "cda8b550123383d25827705d05a42acf6819fe4e"
         }
     },
-    "symfony/var-dumper": {
+    "symfony/twig-bridge": {
         "version": "v4.1.0"
     },
-    "symfony/web-server-bundle": {
+    "symfony/twig-bundle": {
         "version": "3.3",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "master",
             "version": "3.3",
-            "ref": "dae9b39fd6717970be7601101ce5aa960bf53d9a"
+            "ref": "f75ac166398e107796ca94cc57fa1edaa06ec47f"
         }
     },
     "symfony/yaml": {
         "version": "v4.1.0"
     },
-    "theofidry/psysh-bundle": {
-        "version": "v3.4.0"
+    "twig/twig": {
+        "version": "v2.4.8"
     }
 }
