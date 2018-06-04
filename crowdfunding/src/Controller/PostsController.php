@@ -13,9 +13,9 @@ class PostsController extends Controller
     /**
      * @Route("/posts", name="posts")
      */
-    public function index(RegistryInterface $doctrine)
+    public function index(RegistryInterface $postRepository)
     {
-        $posts = $doctrine->getRepository(Post::class)->findAll();
+        $posts = $postRepository->getRepository(Post::class)->findAll();
         return $this->render('posts/index.html.twig', compact('posts'));
     }
 }
