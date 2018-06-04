@@ -6,6 +6,7 @@
 
     {{ form_start(form) }}
     {{ form_widget(form) }}
+    <button>Envoyer</button>
     {{ form_end(form) }}
     <table class="table table-striped">
         <thead>
@@ -19,7 +20,7 @@
             {% for post in posts %}
                 <tr>
                     <td>{{ post.title }}</td>
-                    <td>{{ post.publish }}</td>
+                    <td>{{ post.published }}</td>
                     <td></td>
                 </tr>
             {% endfor %}
