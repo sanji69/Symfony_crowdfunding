@@ -121,9 +121,9 @@ class Users
         return $this->token;
     }
 
-    public function setToken(string $token): self
+    public function setToken(): self
     {
-        $this->token = $token;
+        $this->token = bin2hex(random_bytes(100));
 
         return $this;
     }
@@ -139,4 +139,16 @@ class Users
 
         return $this;
     }
+
+    public function getSalt()
+    {
+        // The bcrypt and argon2i algorithms don't require a separate salt.
+        // You *may* need a real salt if you choose a different encoder.
+        return null;
+    }
+
+    public function eraseCredentials()
+    {
+    }
+
 }
