@@ -1,19 +1,32 @@
 security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
-        in_memory: { memory: ~ }
+        database_users:
+            entity: { class: App\Entity\User, property: username }
+
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
+
         main:
+            pattern: ^/
             anonymous: ~
             form_login:
                 login_path: login
                 check_path: login
+                # Securisation des formulaires
+                csrf_token_generator: security.csrf.token_manager
+                # La page par defaut apres une connexion reussie
+                default_target_path: admin
             # activate different ways to authenticate
+            logout:
+                # La route où se trouve le process de deconnexion
+                path: security_logout
+                # La route sur laquelle doit etre rediriger l'utilisateur apres une deconnexion
+                target: index
 
-#             http_basic: true
+            # http_basic: true
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
 
             # form_login: true

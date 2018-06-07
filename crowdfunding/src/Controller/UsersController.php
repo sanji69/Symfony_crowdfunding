@@ -14,41 +14,15 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class UsersController extends Controller
 {
     /**
-    * @Route("/register", name="user_registration", methods={"GET", "POST"})
-    */
-    public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder)
+     * La route pour se deconnecter. "intercepté par symfony"
+     *
+     * @Route("/logout", name="security_logout")
+     */
+    public function logout(): void
     {
-        // 1) build the form
-        $user = new Users();
-        $user->setRoles('ROLE_USER');
-        $form = $this->createForm(UsersType::class, $user);
-
-        dump($user);
-
-        // 2) handle the submit (will only happen on POST)
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid())
-        {
-
-            // 3) Encode the password and add token
-            $password = $passwordEncoder->encodePassword($user, $user->getPassword());
-            $user->setPassword($password);
-            $token = bin2hex(random_bytes(100));
-            $user->SetToken($token);
-
-            // 4) save the User!
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($user);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('/register"');
-        }
-
-        return $this->render(
-        'users/register.html.twig',
-        array('form' => $form->createView())
-        );
+        throw new \Exception('This should never be reached!');
     }
+
     /**
      * @Route("/login", name="security_login")
      */
@@ -63,16 +37,38 @@ class UsersController extends Controller
     }
 
     /**
-     * La route pour se deconnecter.
-     *
-     * Mais celle ci ne doit jamais être executé car symfony l'interceptera avant.
-     *
-     *
-     * @Route("/logout", name="security_logout")
-     */
-    public function logout(): void
+    * @Route("/register", name="user_registration", methods={"GET", "POST"})
+    */
+    public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
-        throw new \Exception('This should never be reached!');
+        // mise en place du formulaire
+        $user = new Users();
+//        $user->setRoles(['ROLE_USER']);
+        $form = $this->createForm(UsersType::class, $user);
+
+        // preparer la requete
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid())
+        {
+
+            // cryptage du password et ajout token
+            $password = $passwordEncoder->encodePassword($user, $user->getPassword());
+            $user->setPassword($password);
+            $token = bin2hex(random_bytes(100));
+            $user->SetToken($token);
+
+            // enregistrement de l'utilisateur dans la BDD
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($user);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('security_login"');
+        }
+
+        return $this->render(
+        'users/register.html.twig',
+        array('form' => $form->createView())
+        );
     }
 
 }
