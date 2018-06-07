@@ -3,11 +3,14 @@
 namespace App\Controller\Users;
 
 use App\Form\UsersType;
+use App\Events;
 use App\Entity\Users;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\EventDispatcher\GenericEvent;
 
 class RegistrationController extends Controller
 {
@@ -15,7 +18,7 @@ class RegistrationController extends Controller
     /**
      * @Route("/register", name="user_registration", methods={"GET", "POST"})
      */
-    public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder)
+    public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, EventDispatcherInterface $eventDispatcher)
     {
         // mise en place du formulaire
         $user = new Users();
@@ -37,6 +40,11 @@ class RegistrationController extends Controller
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
+
+            //On déclenche l'event envoy du mail pour vérification validation compte
+            $event = new GenericEvent($user);
+            $eventDispatcher->dispatch(Events::USER_REGISTERED, $event);
+
 
             return $this->redirectToRoute('security_login');
         }
