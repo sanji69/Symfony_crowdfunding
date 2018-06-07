@@ -3,11 +3,17 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\UsersRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\UsersRepository") *
+ * @ORM\Table(name="users")
+ * @UniqueEntity(fields="email", message="Email déjà pris")
+ * @UniqueEntity(fields="username", message="Username déjà pris")
  */
-class Users
+class Users implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -17,27 +23,32 @@ class Users
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=150, unique=true)
+     * @Assert\NotBlank()
      */
     private $username;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $lastname;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $firstname;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=150)
+     * @Assert\NotBlank()
      */
     private $email;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
+     * @Assert\NotBlank()
      */
     private $password;
 
@@ -47,9 +58,9 @@ class Users
     private $token;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="json_array")
      */
-    private $permition_id;
+    private $roles = [];
 
     public function getId()
     {
@@ -85,7 +96,7 @@ class Users
         return $this->firstname;
     }
 
-    public function setFirstname(string $lastname): self
+    public function setFirstname(string $firstname): self
     {
         $this->firstname = $firstname;
 
@@ -128,15 +139,33 @@ class Users
         return $this;
     }
 
-    public function getPermitionId(): ?int
+    public function getRoles(): ?array
     {
-        return $this->permition_id;
+        $roles = $this->roles;
+
+        // Afin d'être sûr qu'un user a toujours au moins 1 rôle
+        if (empty($roles)) {
+            $roles[] = 'ROLE_USER';
+        }
+
+        return array_unique($roles);
     }
 
-    public function setPermitionId(int $permition_id): self
+    public function setRoles($roles): self
     {
-        $this->permition_id = $permition_id;
+        $this->roles[] = $roles;
 
         return $this;
+    }
+
+    public function getSalt()
+    {
+        // The bcrypt and argon2i algorithms don't require a separate salt.
+        // You *may* need a real salt if you choose a different encoder.
+        return null;
+    }
+
+    public function eraseCredentials()
+    {
     }
 }
