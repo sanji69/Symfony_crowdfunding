@@ -17,7 +17,7 @@ class Articles
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=150, unique=true)
      */
     private $title;
 
@@ -32,7 +32,7 @@ class Articles
     private $goal;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="integer")
      */
     private $status;
 
