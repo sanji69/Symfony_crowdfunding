@@ -94,7 +94,16 @@ class Articles
 
     public function setStatus(?int $status): self
     {
-        $this->status = $status;
+
+        // de base a 0
+        if (empty($ststus))
+        {
+            $this->status = 0;
+        }
+        else
+        {
+            $this->status = $status;
+        }
 
         return $this;
     }
@@ -106,7 +115,15 @@ class Articles
 
     public function setActived(int $actived): self
     {
-        $this->actived = $actived;
+        // de base a 0
+        if (empty($actived))
+        {
+            $this->actived = 0;
+        }
+        else
+        {
+            $this->actived = $actived;
+        }
 
         return $this;
     }
