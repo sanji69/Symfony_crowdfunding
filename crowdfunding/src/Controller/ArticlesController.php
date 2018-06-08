@@ -15,12 +15,4 @@ class ArticlesController extends Controller
     {
         return $this->render('articles/index.html.twig');
     }
-
-    /**
-     * @Route("/admin", name="admin")
-     */
-    public function admin()
-    {
-        return $this->render('dashboard/dashboard.html.twig');
-    }
 }
