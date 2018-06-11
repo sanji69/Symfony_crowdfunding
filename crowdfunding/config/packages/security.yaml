@@ -13,12 +13,12 @@ security:
             pattern: ^/
             anonymous: ~
             form_login:
-                login_path: login
-                check_path: login
+                login_path: security_login
+                check_path: security_login
                 # Securisation des formulaires
                 csrf_token_generator: security.csrf.token_manager
                 # La page par defaut apres une connexion reussie
-                default_target_path: index
+#                  default_target_path: index
                 always_use_default_target_path: true
             # activate different ways to authenticate
             logout:

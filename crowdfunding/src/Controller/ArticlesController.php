@@ -30,7 +30,7 @@ class ArticlesController extends Controller
     }
 
     /**
-     * @Route("/modify", name="modifier_articles, methods={"GET", "POST"}")
+     * @Route("/modify", name="modifier_articles", methods={"GET", "POST"})
      */
     public function modify()
     {

@@ -41,13 +41,13 @@ class Users implements UserInterface
     private $firstname;
 
     /**
-     * @ORM\Column(type="string", length=150)
+     * @ORM\Column(type="string", length=150, unique=true)
      * @Assert\NotBlank()
      */
     private $email;
 
     /**
-     * @ORM\Column(type="string", length=255, unique=true)
+     * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
      */
     private $password;
