@@ -5,6 +5,8 @@ namespace App\Controller;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use App\Entity\Articles;
+use Doctrine\Common\Persistence\ObjectManager;
 
 class ArticlesController extends Controller
 {
@@ -12,8 +14,10 @@ class ArticlesController extends Controller
     /**
     * @Route("/", name="index")
     */
-    public function index()
+    public function index(ObjectManager $manager)
     {
+
+        $articles = $manager->getRepository(Articles::class);
         // afficher les 8 derniers articles
         return $this->render('articles/index.html.twig');
     }
