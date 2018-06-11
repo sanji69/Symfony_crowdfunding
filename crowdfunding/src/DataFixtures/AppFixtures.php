@@ -8,9 +8,11 @@ USE App\Entity\Articles;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
-use Symfony\Component\Validator\Constraints\DateTime;
+//use Symfony\Component\Validator\Constraints\DateTime;
 
-class AppFixtures extends Fixture implements DateTimeInterface
+use \DateTime;
+
+class AppFixtures extends Fixture
 {
     private $passwordEncoder;
 
@@ -58,11 +60,10 @@ class AppFixtures extends Fixture implements DateTimeInterface
             $contrib->setUsersId($users_id);
             $contrib->setArticlesId($articles_id);
             $contrib->setValue($value);
-            $submit = new DateTime('Y-m-d');
+            $submit = new DateTime();
             $contrib->setSubmitAt($submit);
 
             $manager->persist($contrib);
-            $this->addReference($value, $contrib);
         }
 
         $manager->flush();
