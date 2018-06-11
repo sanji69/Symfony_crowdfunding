@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Articles;
+//use App\Entity\Users;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
@@ -17,6 +18,17 @@ class ArticlesRepository extends ServiceEntityRepository
     public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, Articles::class);
+    }
+
+
+    public function articleUser()
+    {
+        return $this->createQueryBuilder('a')
+            ->leftJoin('a.user_id', 'u')
+            ->getQuery()
+            ->getResult()
+            ;
+
     }
 
 //    /**
@@ -35,6 +47,12 @@ class ArticlesRepository extends ServiceEntityRepository
         ;
     }
     */
+
+//$request = "SELECT * FROM articles LEFT OUTER JOIN users ON aticles.user_id = users.id";
+//$stmt = $this->getDoctrine()->getConnection()->prepare($request);
+//$stmt->execute();
+//$articles = $stmt->fetchAll();
+
 
     /*
     public function findOneBySomeField($value): ?Articles

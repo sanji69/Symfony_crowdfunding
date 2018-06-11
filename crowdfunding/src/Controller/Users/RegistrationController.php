@@ -11,6 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\GenericEvent;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class RegistrationController extends Controller
 {
@@ -22,7 +23,8 @@ class RegistrationController extends Controller
     {
         // mise en place du formulaire
         $user = new Users();
-        $user->setRoles(['ROLE_USER']);
+        $user->setRoles('ROLE_USER');
+        $user->setToken(rand(250,1000));
         $form = $this->createForm(UsersType::class, $user);
 
         // preparer la requete
@@ -33,8 +35,6 @@ class RegistrationController extends Controller
             // cryptage du password et ajout token
             $password = $passwordEncoder->encodePassword($user, $user->getPassword());
             $user->setPassword($password);
-            $token = bin2hex(random_bytes(100));
-            $user->SetToken($token);
 
             // enregistrement de l'utilisateur dans la BDD
             $entityManager = $this->getDoctrine()->getManager();
@@ -46,13 +46,42 @@ class RegistrationController extends Controller
             $eventDispatcher->dispatch(Events::USER_REGISTERED, $event);
 
 
-            return $this->redirectToRoute('security_login');
+            return $this->redirectToRoute('security_connexion');
         }
 
         return $this->render(
             'users/register.html.twig',
             array('form' => $form->createView())
         );
+    }
+
+    /**
+     * Connexion d'un utilisateur
+     * @Route("/login", name="security_connexion")
+     */
+    public function connexion(Request $request, AuthenticationUtils $authenticationUtils)
+    {
+        # Récupération du message d'erreur s'il y en a un.
+        $error = $authenticationUtils->getLastAuthenticationError();
+
+        # Dernier email saisie par l'utilisateur.
+        $lastEmail = $authenticationUtils->getLastUsername();
+
+        # Affichage du Formulaire
+        return $this->render('users/login.html.twig', array(
+            'last_email' => $lastEmail,
+            'error' => $error,
+        ));
+    }
+
+    /**
+    * La route pour se deconnecter. "intercepté par symfony"
+    *
+    * @Route("/logout", name="security_logout")
+    */
+    public function logout(): void
+    {
+        throw new \Exception('This should never be reached!');
     }
 
 }

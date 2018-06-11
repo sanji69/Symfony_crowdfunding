@@ -2,40 +2,44 @@
 
 namespace App\Controller;
 
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\Response;
-use Doctrine\Common\Persistence\ObjectManager;
 use Twig\Environment;
 use App\Entity\Users;
-use App\Entity\Contributor;
-use App\Entity\Articles;
+//use App\Entity\Articles;
+//use App\Entity\Contributor;
 
 
-class DashboardController {
+class DashboardController extends AbstractController
+{
 
     /**
      * @Route("/admin", name="dashboard", methods={"GET", "POST"})
      */
-    public function index(Environment $twig, ObjectManager $manager) {
+    public function index(Environment $twig, EntityManagerInterface $em)
+    {
 
 
-        //recupération des
-        $users = $manager->getRepository(Users::class);
+        //recupération des users
+        $users = $em->getRepository(Users::class)->findAll();
 
         //passé utilisateur en admin
 
+//        $produits = $em->getRepository(Articles::class)->dede();
+//        die($produits);
+
         //recupération des articles
-        $articles = $manager->getRepository(Articles::class);
 
         // récupération des transaction
-        $conts = $manager->getRepository(Contributor::class);
+//        $conts = $em->getRepository(Contributor::class)->findAll();
 
         //activé articles
 
-        return new Response($twig->render('dashboard/dashboard.html.twig', array(
+        return $this->render('dashboard/dashboard.html.twig', [
             'users'=>$users,
-            'articles'=>$articles,
-            'conts'=>$conts
-        )));
+//            'articles'=>$articles,
+//            'conts'=>$conts,
+        ]);
     }
 }

@@ -41,10 +41,20 @@ class Articles
      */
     private $actived;
 
+
     /**
-     * @ORM\Column(type="integer")
+     *
+     * @ORM\ManyToOne(targetEntity="App\Entity\Users", inversedBy="articles")
+     * @ORM\JoinColumn(nullable=false , unique=false)
      */
-    private $user_id;
+    private $user;
+
+    /**
+     *
+     * @ORM\OneToMany(targetEntity="App\Entity\Contributor", mappedBy="articles")
+     * @ORM\JoinColumn(nullable=false , unique=false)
+     */
+    private $contributor;
 
     public function getId()
     {
@@ -128,14 +138,26 @@ class Articles
         return $this;
     }
 
-    public function getUserId(): ?int
+    public function getUser(): ?int
     {
-        return $this->user_id;
+        return $this->user;
     }
 
-    public function setUserId(int $user_id): self
+    public function setUser(int $user): self
     {
-        $this->user_id = $user_id;
+        $this->user = $user;
+
+        return $this;
+    }
+
+    public function getUsers(): ?Users
+    {
+        return $this->user;
+    }
+
+    public function setUsersId(?Users $users): self
+    {
+        $this->user = $users;
 
         return $this;
     }

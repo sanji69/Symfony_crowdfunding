@@ -17,14 +17,19 @@ class Contributor
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
+     *
+     * @ORM\ManyToOne(targetEntity="App\Entity\Users",inversedBy="contributor")
+     * @ORM\JoinColumn(nullable=false , unique=false)
      */
-    private $users_id;
+    private $users;
 
     /**
-     * @ORM\Column(type="integer")
+     *
+     * @ORM\ManyToOne(targetEntity="App\Entity\Articles" ,inversedBy="contributor")
+     * @ORM\JoinColumn(nullable=false , unique=false)
      */
-    private $articles_id;
+    private $articles;
+
 
     /**
      * @ORM\Column(type="integer")
@@ -41,26 +46,26 @@ class Contributor
         return $this->id;
     }
 
-    public function getUsersId(): ?int
+    public function getUsers(): ?int
     {
-        return $this->users_id;
+        return $this->users;
     }
 
-    public function setUsersId(int $users_id): self
+    public function setUsers(int $users_id): self
     {
         $this->users_id = $users_id;
 
         return $this;
     }
 
-    public function getArticlesId(): ?int
+    public function getArticles(): ?int
     {
-        return $this->articles_id;
+        return $this->articles;
     }
 
-    public function setArticlesId(int $articles_id): self
+    public function setArticles(int $articles): self
     {
-        $this->articles_id = $articles_id;
+        $this->articles = $articles;
 
         return $this;
     }
