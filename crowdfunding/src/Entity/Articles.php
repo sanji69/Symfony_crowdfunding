@@ -96,7 +96,7 @@ class Articles
     {
 
         // de base a 0
-        if (empty($ststus))
+        if (empty($status))
         {
             $this->status = 0;
         }
