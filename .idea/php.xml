@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/zendframework/zend-eventmanager" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/zendframework/zend-code" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/ocramius/proxy-manager" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/ocramius/package-versions" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/doctrine/doctrine-migrations-bundle" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/doctrine/migrations" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/doctrine/doctrine-cache-bundle" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/asset" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/inflector" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/form" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/dotenv" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/maker-bundle" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/twig-bridge" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/webpack-encore-pack" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/web-server-bundle" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/intl" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/twig-bundle" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/doctrine-bridge" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/framework-bundle" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/polyfill-intl-icu" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/flex" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/property-access" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/security" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/orm-pack" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/security-bundle" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/sensio/framework-extra-bundle" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/jdorn/sql-formatter" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/composer" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
+</project>
