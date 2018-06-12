@@ -30,8 +30,7 @@ class AppFixtures extends Fixture
             $user->setFirstname($firstname);
             $user->setPassword($this->passwordEncoder->encodePassword($user, $password));
             $user->setEmail($email);
-            $token = bin2hex(random_bytes(100));
-            $user->setToken($token);
+            $user->setToken(rand(250,1000));
             $user->setRoles($roles);
 
             $manager->persist($user);
@@ -40,14 +39,14 @@ class AppFixtures extends Fixture
 
         $manager->flush();
 
-        foreach ($this->getArtData() as [$title, $content, $goal, $status, $actived, $user_id]) {
+        foreach ($this->getArtData() as [$title, $content, $goal, $status, $actived, $user) {
             $article = new Articles();
             $article->setTitle($title);
             $article->setContent($content);
             $article->setGoal($goal);
             $article->setStatus($status);
             $article->setActived($actived);
-            $article->setUserId($user_id);
+            $article->setUser($user);
 
             $manager->persist($article);
             $this->addReference($title, $article);
@@ -55,10 +54,10 @@ class AppFixtures extends Fixture
 
         $manager->flush();
 
-        foreach ($this->getContData() as [$users_id, $articles_id, $value]) {
+        foreach ($this->getContData() as [$users, $articles, $value]) {
             $contrib = new Contributor();
-            $contrib->setUsersId($users_id);
-            $contrib->setArticlesId($articles_id);
+            $contrib->setUsers($users);
+            $contrib->setArticles($articles);
             $contrib->setValue($value);
             $submit = new DateTime();
             $contrib->setSubmitAt($submit);
@@ -73,9 +72,9 @@ class AppFixtures extends Fixture
         {
         return [
             // $userData = [$username, $lastname, $firstname, $password, $email, $roles];
-            ['jane_admin', 'Doe', 'Jane', 'kitten', 'jane_admin@symfony.com', ['ROLE_ADMIN']],
-            ['tom_admin', 'Doe', 'Tom', 'kitten', 'tom_admin@symfony.com', ['ROLE_ADMIN']],
-            ['john_user', 'Doe', 'John', 'kitten', 'john_user@symfony.com', ['ROLE_USER']],
+            ['jane_admin', 'Doe', 'Jane', 'kitten', 'jane_admin@symfony.com', 'a:1:{i:0;s:10:"ROLE_ADMIN";}'],
+            ['tom_admin', 'Doe', 'Tom', 'kitten', 'tom_admin@symfony.com', 'a:1:{i:0;s:10:"ROLE_ADMIN";}'],
+            ['john_user', 'Doe', 'John', 'kitten', 'john_user@symfony.com', 'a:1:{i:0;s:9:"ROLE_USER";}'],
         ];
     }
 
