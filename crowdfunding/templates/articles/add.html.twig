@@ -6,4 +6,14 @@
 
     <h3>Ajouter un article</h3>
 
+    {{ form_start(form) }}
+    {{ form_row(form.title) }}
+    {{ form_row(form.goal) }}
+    {{ form_row(form.content) }}
+    {{ form_row(form.user) }}
+     {#{{ app.user.id }}#}
+
+    <button type="submit">Enregistrer</button>
+    {{ form_end(form) }}
+
 {% endblock %}

@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "41432918bcdf9bfbe29112c3578c7010",
+    "content-hash": "2eb2df2fc29739efd0ce48aabe1dbc6b",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -4618,6 +4618,83 @@
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
             "time": "2018-05-30T07:26:09+00:00"
+        },
+        {
+            "name": "symfony/profiler-pack",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/profiler-pack.git",
+                "reference": "fa2e2dad522a3bef322196abad28ffce6d0fdbc5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/profiler-pack/zipball/fa2e2dad522a3bef322196abad28ffce6d0fdbc5",
+                "reference": "fa2e2dad522a3bef322196abad28ffce6d0fdbc5",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0",
+                "symfony/stopwatch": "^3.3|^4.0",
+                "symfony/twig-bundle": "^3.3|^4.0",
+                "symfony/web-profiler-bundle": "^3.3|^4.0"
+            },
+            "type": "symfony-pack",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A pack for the Symfony web profiler",
+            "time": "2017-12-12T01:48:24+00:00"
+        },
+        {
+            "name": "symfony/stopwatch",
+            "version": "v4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/stopwatch.git",
+                "reference": "07463bbbbbfe119045a24c4a516f92ebd2752784"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/stopwatch/zipball/07463bbbbbfe119045a24c4a516f92ebd2752784",
+                "reference": "07463bbbbbfe119045a24c4a516f92ebd2752784",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Stopwatch\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Stopwatch Component",
+            "homepage": "https://symfony.com",
+            "time": "2018-02-19T16:51:42+00:00"
         },
         {
             "name": "symfony/web-server-bundle",

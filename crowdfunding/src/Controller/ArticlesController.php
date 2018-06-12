@@ -2,11 +2,13 @@
 
 namespace App\Controller;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
+use App\Form\ArticlesType;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use App\Entity\Articles;
-use Doctrine\Common\Persistence\ObjectManager;
+//use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
 
 class ArticlesController extends Controller
 {
@@ -14,57 +16,102 @@ class ArticlesController extends Controller
     /**
     * @Route("/", name="index")
     */
-    public function index(ObjectManager $manager)
+    public function indexAction()
     {
-
-        $articles = $manager->getRepository(Articles::class);
-        // afficher les 8 derniers articles
-        return $this->render('articles/index.html.twig');
+       //Appel de l'entity Manager
+        $em = $this->getDoctrine()->getManager();
+        $articles = $em
+            ->getRepository(Articles::class)
+            ->findAll();
+        return $this->render("articles/index.html.twig", [
+            "articles" => $articles
+        ]);
     }
 
     /**
      * @Route("/add", name="creer_articles", methods={"GET", "POST"})
      */
-    public function create()
+    public function createAction(Request $request)
     {
-        //formulaire de création
-        //injection en base de donnée (doctrine)
-        //redirection vers retrieve -> article
-        return $this->render('articles/add.html.twig');
+
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
+        $user_id = $this
+                ->getUser()
+                ->getId()
+            ;
+
+        //Instance de l'entité
+        $article = new Articles;
+
+        $article->setUser($user_id);
+        $article->setActived(0);
+
+
+        //Création du formulaire
+        $form = $this->createForm(ArticlesType::class, $article);
+
+        $form->handleRequest($request);
+
+        //Récupération des données du formulaire
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            //Appel de l'Entity Manager et envoi en base de donnée
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($article);
+            $entityManager->flush();
+
+
+            //Redirection
+            return $this->redirectToRoute("articles/retrieve.html.twig", [
+                "title"=>$article->getTitle(),
+                "id"=>$article->getId()
+            ]);
+        }
+
+        //Envois du formulaire au fichier de vue
+        return $this->render("articles/add.html.twig", array(
+            "form"=>$form->createView()
+        ));
+
+
     }
 
     /**
      * @Route("/modify", name="modifier_articles", methods={"GET", "POST"})
      */
-    public function modify()
+    public function modifyAction(Request $request)
     {
-        // recupération de l'article
-        //formulaire de modification remplis
-        //injection en base de donnée (doctrine)
-        //redirection vers retrieve -> article
+        $articles = new Articles;
+        $form = $this->createForm(ArticlesType::class, $articles);
+
+        if($form->isSubmitted() && $form->isValid()) {
+            $this->addFlash('success', 'artile updated');
+        }
+
         return $this->render('articles/modify.html.twig');
     }
 
     /**
      * @Route("/retrieve", name="mon_articles", methods={"GET"})
      */
-    public function retrieve()
+    public function retrieveAction($title, $id)
     {
-        // récupération de l'article
-        // affichage de l'article
+        $em = $this->getDoctrine()->getManager();
 
-        // -> title
-        // -> content
-        // -> auteur
-        // -> status/goal
+        $article = $em
+            ->getRepository(Articles::class)
+            ->find($id);
 
-        return $this->render('articles/retrieve.html.twig');
+        return $this->render('articles/retrieve.html.twig', [
+            "article" => $article
+        ]);
     }
 
     /**
      * @Route("/erase", name="supprimer_articles", methods={"GET"})
      */
-    public function erase()
+    public function eraseAction()
     {
         //doctrine -> actived = 0 -> envoi requete
         // redirection index
@@ -74,7 +121,7 @@ class ArticlesController extends Controller
     /**
      * @Route("/search", name="ma_recherche", methods={"GET"})
      */
-    public function search()
+    public function searchAction()
     {
         //-> recherhe dans la bdd requete composé
 

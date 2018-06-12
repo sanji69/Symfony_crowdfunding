@@ -45,7 +45,7 @@ class Articles
     /**
      *
      * @ORM\ManyToOne(targetEntity="App\Entity\Users", inversedBy="articles")
-     * @ORM\JoinColumn(nullable=false , unique=false)
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     private $user;
 
