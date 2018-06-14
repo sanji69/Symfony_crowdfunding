@@ -17,14 +17,19 @@ class Contributor
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
+     *
+     * @ORM\ManyToOne(targetEntity="App\Entity\Users",inversedBy="contributor")
+     * @ORM\JoinColumn(name="users", referencedColumnName="id")
      */
-    private $users_id;
+    private $users;
 
     /**
-     * @ORM\Column(type="integer")
+     *
+     * @ORM\ManyToOne(targetEntity="App\Entity\Articles" ,inversedBy="contributor")
+     * @ORM\JoinColumn(name="articles", referencedColumnName="id")
      */
-    private $articles_id;
+    private $articles;
+
 
     /**
      * @ORM\Column(type="integer")
@@ -41,29 +46,38 @@ class Contributor
         return $this->id;
     }
 
-    public function getUsersId(): ?int
+    /**
+     * @return mixed
+     */
+    public function getUsers()
     {
-        return $this->users_id;
+        return $this->users;
     }
 
-    public function setUsersId(int $users_id): self
+    /**
+     * @param mixed $users
+     */
+    public function setUsers($users): void
     {
-        $this->users_id = $users_id;
-
-        return $this;
+        $this->users = $users;
     }
 
-    public function getArticlesId(): ?int
+    /**
+     * @return mixed
+     */
+    public function getArticles()
     {
-        return $this->articles_id;
+        return $this->articles;
     }
 
-    public function setArticlesId(int $articles_id): self
+    /**
+     * @param mixed $articles
+     */
+    public function setArticles($articles): void
     {
-        $this->articles_id = $articles_id;
-
-        return $this;
+        $this->articles = $articles;
     }
+
 
     public function getValue(): ?int
     {

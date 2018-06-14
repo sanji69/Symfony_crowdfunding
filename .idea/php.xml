@@ -66,6 +66,18 @@
       <path value="$PROJECT_DIR$/crowdfunding/vendor/psr/cache" />
       <path value="$PROJECT_DIR$/crowdfunding/vendor/psr/container" />
       <path value="$PROJECT_DIR$/crowdfunding/vendor/composer" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/swiftmailer-bundle" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/profiler-pack" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/pugx/autocompleter-bundle" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />

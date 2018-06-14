@@ -41,10 +41,20 @@ class Articles
      */
     private $actived;
 
+
     /**
-     * @ORM\Column(type="integer")
+     *
+     * @ORM\ManyToOne(targetEntity="App\Entity\Users", inversedBy="articles")
+     * @ORM\JoinColumn(name="users", referencedColumnName="id")
      */
-    private $user_id;
+    private $user;
+
+    /**
+     *
+     * @ORM\OneToMany(targetEntity="App\Entity\Contributor", mappedBy="articles")
+     * @ORM\JoinColumn(nullable=false , unique=false)
+     */
+    private $contributor;
 
     public function getId()
     {
@@ -96,7 +106,7 @@ class Articles
     {
 
         // de base a 0
-        if (empty($ststus))
+        if (empty($status))
         {
             $this->status = 0;
         }
@@ -128,15 +138,20 @@ class Articles
         return $this;
     }
 
-    public function getUserId(): ?int
+    /**
+     * @return mixed
+     */
+    public function getUser()
     {
-        return $this->user_id;
+        return $this->user;
     }
 
-    public function setUserId(int $user_id): self
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user): void
     {
-        $this->user_id = $user_id;
-
-        return $this;
+        $this->user = $user;
     }
+
 }

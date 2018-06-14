@@ -3,11 +3,16 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
+    <div>
+        <h2>{{ article.title }}</h2>
 
-    <a href="{{ path('security_login')}}"> Connexion</a>
-    <a href="{{ path('user_registration')}}"> Inscription</a>
-    <a href="{{ path('dashboard')}}"> Administration</a>
+        <div>{{ article.content }}</div>
+        <a href="{{ path('articles/retrieve.html.twig', {
+            "id":article.id
+        }) }}">Modifier l'aricle</a>
+    </div>
 
-    <h3>Modifier un article</h3>
+
+
 
 {% endblock %}

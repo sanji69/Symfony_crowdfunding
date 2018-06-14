@@ -1,33 +1,26 @@
 security:
+    encoders:
+             App\Entity\Users: bcrypt
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
-        database_users:
-            entity: { class: App\Entity\User, property: username }
-
+        in_memory: { memory: ~ }
+        user_provider:
+            entity:
+                   class: App\Entity\Users
+                   property: email
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-
         main:
-            pattern: ^/
             anonymous: ~
             form_login:
-                login_path: login
-                check_path: login
-                # Securisation des formulaires
-                csrf_token_generator: security.csrf.token_manager
-                # La page par defaut apres une connexion reussie
-                default_target_path: index
-                always_use_default_target_path: true
+                login_path: security_connexion
+                check_path: security_connexion
             # activate different ways to authenticate
-            logout:
-                # La route où se trouve le process de deconnexion
-                path: security_logout
-                # La route sur laquelle doit etre rediriger l'utilisateur apres une deconnexion
-                target: index
 
-            # http_basic: true
+            http_basic: ~
+            provider: user_provider
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
 
             # form_login: true
@@ -35,13 +28,10 @@ security:
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
-    access_control:
-         - { path: ^/admin, roles: ROLE_ADMIN }
-         - { path: ^/profile, roles: ROLE_USER }
-
-    encoders:
-            App\Entity\Users: bcrypt
+#    access_control:
+#         - { path: ^/admin, roles: ROLE_ADMIN }
+#         - { path: ^/profile, roles: ROLE_USER }
 
 
-    role_hierarchy:
-        ROLE_ADMIN:       ROLE_USER
+
+

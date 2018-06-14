@@ -1,3 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+
+
+
+
 
 {{ form_start(form) }}
     {{ form_row(form.username) }}
@@ -9,3 +18,5 @@
 
 <button type="submit">Register!</button>
 {{ form_end(form) }}
+
+{% endblock %}

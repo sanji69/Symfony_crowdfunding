@@ -95,6 +95,9 @@
     "psr/simple-cache": {
         "version": "1.0.1"
     },
+    "pugx/autocompleter-bundle": {
+        "version": "v1.4.1"
+    },
     "sensio/framework-extra-bundle": {
         "version": "4.0",
         "recipe": {
@@ -227,6 +230,9 @@
     "symfony/process": {
         "version": "v4.1.0"
     },
+    "symfony/profiler-pack": {
+        "version": "v1.0.3"
+    },
     "symfony/property-access": {
         "version": "v4.1.0"
     },
@@ -250,6 +256,9 @@
             "version": "3.3",
             "ref": "f8a63faa0d9521526499c0a8f403c9964ecb0527"
         }
+    },
+    "symfony/stopwatch": {
+        "version": "v4.1.0"
     },
     "symfony/swiftmailer-bundle": {
         "version": "2.5",

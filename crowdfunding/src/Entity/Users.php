@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -41,13 +42,13 @@ class Users implements UserInterface
     private $firstname;
 
     /**
-     * @ORM\Column(type="string", length=150)
+     * @ORM\Column(type="string", length=150, unique=true)
      * @Assert\NotBlank()
      */
     private $email;
 
     /**
-     * @ORM\Column(type="string", length=255, unique=true)
+     * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
      */
     private $password;
@@ -58,9 +59,44 @@ class Users implements UserInterface
     private $token;
 
     /**
-     * @ORM\Column(type="json_array")
+     * @ORM\Column(name="roles", type="array")
      */
-    private $roles = [];
+    private $roles;
+
+    /**
+     *
+     * @ORM\OneToMany(targetEntity="App\Entity\Articles", mappedBy="user")
+     * @ORM\JoinColumn(nullable=false , unique=false)
+     */
+    private $articles;
+
+    /**
+     *
+     * @ORM\OneToMany(targetEntity="App\Entity\Contributor", mappedBy="user")
+     * @ORM\JoinColumn(nullable=false , unique=false)
+     */
+    private $contributor;
+
+    /**
+     * @return mixed
+     */
+    public function getArticles()
+    {
+        return $this->articles;
+    }
+
+    /**
+     * @param mixed $articles
+     */
+    public function setArticles($articles): void
+    {
+        $this->articles = $articles;
+    }
+
+    public function __construct()
+    {
+        $this->articles = new ArrayCollection();
+    }
 
     public function getId()
     {
@@ -139,23 +175,13 @@ class Users implements UserInterface
         return $this;
     }
 
-    public function getRoles(): ?array
+    public function getRoles()
     {
-        $roles = $this->roles;
-
-        // Afin d'être sûr qu'un user a toujours au moins 1 rôle
-        if (empty($roles)) {
-            $roles[] = 'ROLE_USER';
-        }
-
-        return array_unique($roles);
+        return $this->roles;
     }
-
-    public function setRoles($roles): self
+    public function setRoles($roles): void
     {
         $this->roles[] = $roles;
-
-        return $this;
     }
 
     public function getSalt()
@@ -167,5 +193,7 @@ class Users implements UserInterface
 
     public function eraseCredentials()
     {
+        return null;
     }
+
 }

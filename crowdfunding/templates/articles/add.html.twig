@@ -1,13 +1,17 @@
-{% extends 'base.html.twig' %}
+    {% extends 'base.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+    {% block title %}Ajouter un article{% endblock %}
 
-{% block body %}
+    {% block body %}
 
-    <a href="{{ path('security_login')}}"> Connexion</a>
-    <a href="{{ path('user_registration')}}"> Inscription</a>
-    <a href="{{ path('dashboard')}}"> Administration</a>
+    {#{{include("articles/form.html.twig")}}#}
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
 
-    <h3>Ajouter un article</h3>
+    {{ form_rest(form) }}
 
-{% endblock %}
+        <button type="submit" class="btn btn-success" name="button">Submit</button>
+
+        {{ form_end(form) }}
+
+    {% endblock %}
