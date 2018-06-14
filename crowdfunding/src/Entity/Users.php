@@ -71,6 +71,13 @@ class Users implements UserInterface
     private $articles;
 
     /**
+     *
+     * @ORM\OneToMany(targetEntity="App\Entity\Contributor", mappedBy="user")
+     * @ORM\JoinColumn(nullable=false , unique=false)
+     */
+    private $contributor;
+
+    /**
      * @return mixed
      */
     public function getArticles()
@@ -85,13 +92,6 @@ class Users implements UserInterface
     {
         $this->articles = $articles;
     }
-
-    /**
-     *
-     * @ORM\OneToMany(targetEntity="App\Entity\Contributor", mappedBy="user")
-     * @ORM\JoinColumn(nullable=false , unique=false)
-     */
-    private $contributor;
 
     public function __construct()
     {

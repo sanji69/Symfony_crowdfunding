@@ -1,6 +1,6 @@
 #  index:
 #    path: templates\articles\index.html.twig
-#    controller: App\Controller\AticlesController::index
+#    controller: App\Controller\ArticlesController::index
 #    security_login:
 #        path: /login
 #        controller: App\Controller\UsersController::login
