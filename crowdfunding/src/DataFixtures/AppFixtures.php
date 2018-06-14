@@ -39,7 +39,8 @@ class AppFixtures extends Fixture
 
         $manager->flush();
 
-        foreach ($this->getArtData() as [$title, $content, $goal, $status, $actived, $user) {
+        foreach ($this->getArtData() as [$title, $content, $goal, $status, $actived, $user]) 
+        {
             $article = new Articles();
             $article->setTitle($title);
             $article->setContent($content);
