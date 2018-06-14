@@ -138,24 +138,13 @@ class Articles
         return $this;
     }
 
-    public function getUser(): ?int
+
+    public function getUser(): ?Users
     {
         return $this->user;
     }
 
-    public function setUser(int $user): self
-    {
-        $this->user = $user;
-
-        return $this;
-    }
-
-    public function getUsers(): ?Users
-    {
-        return $this->user;
-    }
-
-    public function setUsersId(?Users $users): self
+    public function setUser(?Users $users): self
     {
         $this->user = $users;
 

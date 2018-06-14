@@ -31,7 +31,8 @@ class AppFixtures extends Fixture
             $user->setPassword($this->passwordEncoder->encodePassword($user, $password));
             $user->setEmail($email);
             $user->setToken(rand(250,1000));
-            $user->setRoles($roles);
+            $user->setRoles($r
+            oles);
 
             $manager->persist($user);
             $this->addReference($username, $user);
@@ -39,7 +40,7 @@ class AppFixtures extends Fixture
 
         $manager->flush();
 
-        foreach ($this->getArtData() as [$title, $content, $goal, $status, $actived, $user) {
+        foreach ($this->getArtData() as [$title, $content, $goal, $status, $actived, $user]) {
             $article = new Articles();
             $article->setTitle($title);
             $article->setContent($content);

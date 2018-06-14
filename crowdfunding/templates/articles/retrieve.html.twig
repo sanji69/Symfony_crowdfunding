@@ -1,11 +1,11 @@
-{% extends 'base.html.twig' %}
+    {% extends 'base.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+    {% block title %}Accueil{% endblock %}
 
-{% block body %}
+    {% block body %}
 
 
     <h3>Mon article</h3>
-    {#detail#}
+    {{include("articles/form.html.twig")}}
 
-{% endblock %}
+    {% endblock %}
