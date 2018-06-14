@@ -26,18 +26,10 @@ class AppFixtures extends AbstractFixture
         $this->passwordEncoder = $passwordEncoder;
     }
 
-
-    public function load(ObjectManager $manager)
-    {
-        loadUser();
-        loadArt();
-        loadContrib();
-    }
-
     /*
      * Users Fixtures
      */
-    public function loadUser(ObjectManager $manager)
+    public function load(ObjectManager $manager)
     {
         //chargement utilisateurs
         foreach ($this->getUserData() as [$username, $lastname, $firstname, $password, $email, $roles]) {
