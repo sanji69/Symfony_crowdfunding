@@ -46,29 +46,38 @@ class Contributor
         return $this->id;
     }
 
-    public function getUsers(): ?int
+    /**
+     * @return mixed
+     */
+    public function getUsers()
     {
         return $this->users;
     }
 
-    public function setUsers(int $users_id): self
+    /**
+     * @param mixed $users
+     */
+    public function setUsers($users): void
     {
-        $this->users_id = $users_id;
-
-        return $this;
+        $this->users = $users;
     }
 
-    public function getArticles(): ?int
+    /**
+     * @return mixed
+     */
+    public function getArticles()
     {
         return $this->articles;
     }
 
-    public function setArticles(int $articles): self
+    /**
+     * @param mixed $articles
+     */
+    public function setArticles($articles): void
     {
         $this->articles = $articles;
-
-        return $this;
     }
+
 
     public function getValue(): ?int
     {

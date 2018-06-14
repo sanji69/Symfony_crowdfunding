@@ -138,27 +138,21 @@ class Articles
         return $this;
     }
 
-    public function getUser(): ?int
+    /**
+     * @return mixed
+     */
+    public function getUser()
     {
         return $this->user;
     }
 
-    public function setUser(int $user): self
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user): void
     {
         $this->user = $user;
-
-        return $this;
     }
 
-    public function getUsers(): ?Users
-    {
-        return $this->user;
-    }
 
-    public function setUsersId(?Users $users): self
-    {
-        $this->user = $users;
-
-        return $this;
-    }
 }
