@@ -1,14 +1,22 @@
 {% extends 'base.html.twig' %}
 
+
+{% block stylesheet %}  
+<link rel="stylesheet" href="{{ asset('build/css/login.scss') }}" type="text/css" />
+{% endblock %}
+
+
+
         {% block body %}
+ 
+
         {% if error %}
             <div class="alert alert-danger">
                 {{ error.messageKey }}
             </div>
         {% endif %}
 
-
-            <form action="{{ path('security_connexion') }}" method="post" id="connexion">
+            {# <form class="formulaire" action="{{ path('security_connexion') }}" method="post" id="connexion">
                 <input name="_username"
                        value="{{ last_email }}"
                        class="form-control" required type="email"
@@ -19,6 +27,25 @@
                 <input type="hidden" name="_target_path" value="/register" />
                 <button type="submit" class="connexion-envoi">login</button>
             </form>
+            
+             #}
+<div class="login-page">
+  <div class="form">
+    <form class="register-form">
+      <input type="text" placeholder="name"/>
+      <input type="password" placeholder="password"/>
+      <input type="text" placeholder="email address"/>
+      <button>create</button>
+      <p class="message">Already registered? <a href="#">Sign In</a></p>
+    </form>
+    <form class="login-form">
+      <input type="text" placeholder="username"/>
+      <input type="password" placeholder="password"/>
+      <button>login</button>
+      <p class="message">Not registered? <a href="#">Create an account</a></p>
+    </form>
+  </div>
+</div>
 
 
 {% endblock %}
