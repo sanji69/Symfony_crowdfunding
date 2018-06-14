@@ -19,14 +19,14 @@ class Contributor
     /**
      *
      * @ORM\ManyToOne(targetEntity="App\Entity\Users",inversedBy="contributor")
-     * @ORM\JoinColumn(nullable=false , unique=false)
+     * @ORM\JoinColumn(name="users", referencedColumnName="id")
      */
     private $users;
 
     /**
      *
      * @ORM\ManyToOne(targetEntity="App\Entity\Articles" ,inversedBy="contributor")
-     * @ORM\JoinColumn(nullable=false , unique=false)
+     * @ORM\JoinColumn(name="articles", referencedColumnName="id")
      */
     private $articles;
 

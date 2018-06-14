@@ -14,7 +14,6 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
-use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -22,13 +21,13 @@ class ArticlesType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-
+//        die('form');
         $builder
             ->add('title', TextType::class)
             ->add('goal', IntegerType::class)
             ->add('content', TextareaType::class)
-            ->add('user', HiddenType::class)
-            ;
+        ;
+//        die('end form');
     }
 
 
@@ -41,6 +40,13 @@ class ArticlesType extends AbstractType
             'data_class' => Articles::class
         ));
     }
+
+
+
+
+
+
+
 }
 
 

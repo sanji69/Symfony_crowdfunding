@@ -45,7 +45,7 @@ class Articles
     /**
      *
      * @ORM\ManyToOne(targetEntity="App\Entity\Users", inversedBy="articles")
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="users", referencedColumnName="id")
      */
     private $user;
 
@@ -138,16 +138,20 @@ class Articles
         return $this;
     }
 
-
-    public function getUser(): ?Users
+    /**
+     * @return mixed
+     */
+    public function getUser()
     {
         return $this->user;
     }
 
-    public function setUser(?Users $users): self
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user): void
     {
-        $this->user = $users;
-
-        return $this;
+        $this->user = $user;
     }
+
 }
