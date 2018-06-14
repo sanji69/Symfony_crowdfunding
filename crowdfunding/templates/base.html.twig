@@ -5,78 +5,28 @@
         <title>{% block title %} BIZMAKER {% endblock %}</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
-<<<<<<< HEAD
 
+            <link rel="stylesheet" href="{{ asset('build/css/style.css') }}" type="text/css" />
+            <link rel="stylesheet" href="{{ asset('build/css/responsive.css') }}" type="text/css" />
+            <link rel="stylesheet" href="{{ asset('build/css/menu.css') }}" type="text/css" />
+            <link rel="stylesheet" href="{{ asset('build/css/app.css') }}" type="text/css" />
+            <link rel="stylesheet" href="{{ asset('build/css/grid.css') }}" type="text/css" />
+            <link rel="stylesheet" href="{{ asset('build/css/jquery.bxslider.css') }}" type="text/css" />
+            <link rel="stylesheet" href="{{ asset('build/css/animate.css') }}" type="text/css" />
 
-        {% block stylesheets %}
-
-        <link rel="stylesheet" href="{{ asset('build/css/app.css') }}" type="text/css" />
-        <link rel="stylesheet" href="{{ asset('build/css/animate.css') }}" type="text/css" />
-        <link rel="stylesheet" href="{{ asset('build/css/grid.css') }}" type="text/css" />
-        <link rel="stylesheet" href="{{ asset('build/css/jquery.bxslider.css') }}" type="text/css" />
-        <link rel="stylesheet" href="{{ asset('build/css/menu.css') }}" type="text/css" />
-        <link rel="stylesheet" href="{{ asset('build/css/responsive.css') }}" type="text/css" />
-        <link rel="stylesheet" href="{{ asset('build/css/style.css') }}" type="text/css" />
-
-        {% endblock %}
-=======
         {% block stylesheets %}{% endblock %}
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ path('index')}}">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('security_connexion')}}">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('user_registration')}}">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('security_logout')}}">Logout</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('dashboard')}}">Administration</a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </div>
-        </nav>
->>>>>>> 30bd1d601bc5b3e4113e5ef44ebb93aa00440213
+        
     </head>
     <body>
 
 
-            <!-- css ball-load actualisation f5 -->
-        {# <div class="se-pre-con">
-<div class="cssload-fond">
-	<div class="cssload-container-general">
-			<div class="cssload-internal"><div class="cssload-ballcolor cssload-ball_1"> </div></div>
-			<div class="cssload-internal"><div class="cssload-ballcolor cssload-ball_2"> </div></div>
-			<div class="cssload-internal"><div class="cssload-ballcolor cssload-ball_3"> </div></div>
-			<div class="cssload-internal"><div class="cssload-ballcolor cssload-ball_4"> </div></div>
-	</div>
-</div>
-</div> #}
 
-
-
-
-                {# <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form> #}
 
 
                  <!-- NAVBAR -->
+                 
+
+
 
     <header>
     	<div class="container">
@@ -116,6 +66,7 @@
         {% block body %}
         
 
+
         {% endblock %}
 
 
@@ -126,18 +77,24 @@
 
 
 
-</body>
+
 <footer>
 	<div class="container">
     	<p>BIZMAKER © 2018 - 2019  BRYAN AXEL BACHIR</p>
     </div>
 </footer>
 
+</body>
+
 
     
         {% block javascripts %}
 
-        <script src="{{ asset('build/js/app.js') }}"></script>
+        {% endblock %}
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+         <script src="{{ asset('build/js/app.js') }}"></script>
         <script src="{{ asset('build/js/fastclick.js') }}"></script>
         <script src="{{ asset('build/js/fixed-responsive-nav.js') }}"></script>   
         <script src="{{ asset('build/js/jquery.bxslider.js') }}"></script>   
@@ -145,13 +102,4 @@
         <script src="{{ asset('build/js/script.js') }}"></script>   
         <script src="{{ asset('build/js/scroll.js') }}"></script>   
         <script src="{{ asset('build/js/waypoints.js') }}"></script>   
-
-        
-        
-        
-        {% endblock %}
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-
 </html>
