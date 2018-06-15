@@ -4,3 +4,5 @@
 #    security_login:
 #        path: /login
 #        controller: App\Controller\UsersController::login
+logout:
+    path: /logout

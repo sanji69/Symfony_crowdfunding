@@ -17,10 +17,15 @@ security:
             form_login:
                 login_path: security_connexion
                 check_path: security_connexion
+                always_use_default_target_path: true
             # activate different ways to authenticate
 
             http_basic: ~
             provider: user_provider
+
+            logout:
+                path: /logout
+                target: /
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
 
             # form_login: true
