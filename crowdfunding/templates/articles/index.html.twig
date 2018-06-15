@@ -35,11 +35,7 @@
                 <h2>{{article.title}}</h2>
 
                 <div>{{article.content}}</div>
-                <a href="{{path('articles/retrieve.html.twig',{
-                    "title": article.title,
-                    "id": article.id
-
-                })}}">lire l'article</a>
+                 {#<a href="{{path('articles/retrieve.html.twig',{"title": article.title,"id": article.id})}}">lire l'article</a>#}
             </div>
         {% endfor %}
 

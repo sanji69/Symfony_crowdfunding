@@ -31,12 +31,12 @@ class ArticlesRepository extends ServiceEntityRepository
 
     }
 
-    public function articlesNews()
+    public function articlesNews() : array
     {
         return $this->createQueryBuilder('a')
-            ->andWhere('a.actived = :val')
+            ->where('a.actived = :val')
             ->setParameter('val', 1)
-            ->orderBy('a.created_at', 'DESC')
+            ->orderBy('a.id', 'DESC')
             ->setMaxResults(4)
             ->getQuery()
             ->getResult()

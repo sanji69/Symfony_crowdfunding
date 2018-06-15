@@ -18,9 +18,12 @@ class ArticlesController extends Controller
     */
     public function indexAction(request $request)
     {
-        $repository = $this->getDoctrine()->getRepository(Articles::class);
        //Appel de l'entity Manager
-        $articles = $repository->articlesNews();
+        $articles = $this
+            ->getDoctrine()
+            ->getRepository(Articles::class)
+            ->articlesNews()
+        ;
 
         return $this->render("articles/index.html.twig", [
             "articles" => $articles
