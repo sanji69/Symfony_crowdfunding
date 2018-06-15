@@ -88,8 +88,6 @@
 
     
         {% block javascripts %}
-<<<<<<< HEAD
-=======
 
         {% endblock %}
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -103,40 +101,12 @@
         <script src="{{ asset('build/js/script.js') }}"></script>   
         <script src="{{ asset('build/js/scroll.js') }}"></script>   
         <script src="{{ asset('build/js/waypoints.js') }}"></script>   
-<<<<<<< HEAD
-=======
 
         
         
-        
-        {% endblock %}
->>>>>>> f9f1f724e8bbef39f7c3955428857a8338d6763b
+  
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
             <script src="bundles/pugxautocompleter/js/autocompleter-jqueryui.js"></script>
-        <? php
-        $(document).ready(function () {
-        'use strict';
-        $('#form_titre').autocompleter({
-        url_list: '/search-article',
-        url_get: '/?term='
-        });
-
-<<<<<<< HEAD
-
-        $("#ui-id-1").click(function(){
-        var id = $("#form_titre").val();
-
-        if(id.toString().length > <? php 0){
-        $(location).attr('href', '/article/'+id.toString());
-        }
-        })
-
-        });
-        {% endblock %}
-    </body>
-=======
->>>>>>> f9f1f724e8bbef39f7c3955428857a8338d6763b
->>>>>>> ae49095950d771d65ec274bfdc870e9f6f628473
 </html>
