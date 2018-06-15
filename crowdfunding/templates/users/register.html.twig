@@ -1,13 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Connexion{% endblock %}
+{% block title %}Inscrivez-vous !{% endblock %}
+
+{% block stylesheets %}
+
+<link rel="stylesheet" href="{{ asset('build/css/inscription.css') }}" type="text/css" />
+
+{% endblock %}
 
 {% block body %}
 
-
-
-
-
+  <h2 class="login-header">Inscription</h2>
+  
 {{ form_start(form) }}
     {{ form_row(form.username) }}
     {{ form_row(form.firstname) }}
@@ -16,7 +20,7 @@
     {{ form_row(form.password.first) }}
     {{ form_row(form.password.second) }}
 
-<button type="submit">Register!</button>
+<button type="submit">Inscription!</button>
 {{ form_end(form) }}
 
 {% endblock %}
