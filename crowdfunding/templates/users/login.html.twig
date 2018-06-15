@@ -16,20 +16,29 @@
             </div>
         {% endif %}
 
-            {# <form class="formulaire" action="{{ path('security_connexion') }}" method="post" id="connexion">
-                <input name="_username"
+        <div class="login">
+  <div class="login-triangle"></div>
+  
+  <h2 class="login-header">Connexion</h2>
+
+  <form class="login-container">
+
+             <form class="formulaire" action="{{ path('security_connexion') }}" method="post" id="connexion">
+               <p>  <input name="_username"
                        value="{{ last_email }}"
                        class="form-control" required type="email"
-                       placeholder="Saisissez votre Email">
-                <input name="_password"
+                       placeholder="Saisissez votre Email"></p>
+                 <p> <input name="_password"
                        class="form-control" required type="password"
-                       placeholder="*******">
+                       placeholder="*******"> </p>
                 <input type="hidden" name="_target_path" value="/register" />
-                <button type="submit" class="connexion-envoi">login</button>
+                <p><input type="submit" value="Connexion"></p>
             </form>
+            </form>
+</div>
             
-             #}
-<div class="login">
+             
+{# <div class="login">
   <div class="login-triangle"></div>
   
   <h2 class="login-header">Connexion</h2>
@@ -37,8 +46,8 @@
   <form class="login-container">
     <p><input type="email" placeholder="Email"></p>
     <p><input type="password" placeholder="Password"></p>
-    <p><input type="submit" value="Log in"></p>
+    <p><input type="submit" value="Connexion"></p>
   </form>
-</div>
+</div> #}
 
 {% endblock %}
