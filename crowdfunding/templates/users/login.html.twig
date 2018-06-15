@@ -2,7 +2,7 @@
 
 
 {% block stylesheet %}  
-<link rel="stylesheet" href="{{ asset('build/css/login.scss') }}" type="text/css" />
+<link rel="stylesheet" href="{{ asset('build/css/login.css') }}" type="text/css" />
 {% endblock %}
 
 
@@ -29,23 +29,16 @@
             </form>
             
              #}
-<div class="login-page">
-  <div class="form">
-    <form class="register-form">
-      <input type="text" placeholder="name"/>
-      <input type="password" placeholder="password"/>
-      <input type="text" placeholder="email address"/>
-      <button>create</button>
-      <p class="message">Already registered? <a href="#">Sign In</a></p>
-    </form>
-    <form class="login-form">
-      <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
-      <button>login</button>
-      <p class="message">Not registered? <a href="#">Create an account</a></p>
-    </form>
-  </div>
-</div>
+<div class="login">
+  <div class="login-triangle"></div>
+  
+  <h2 class="login-header">Connexion</h2>
 
+  <form class="login-container">
+    <p><input type="email" placeholder="Email"></p>
+    <p><input type="password" placeholder="Password"></p>
+    <p><input type="submit" value="Log in"></p>
+  </form>
+</div>
 
 {% endblock %}
