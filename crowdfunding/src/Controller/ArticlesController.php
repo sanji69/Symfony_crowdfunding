@@ -61,7 +61,7 @@ class ArticlesController extends Controller
             $em->persist($articles);
             $em->flush();
 
-          
+
 
 
             //Redirection
