@@ -21,9 +21,8 @@
   
   <h2 class="login-header">Connexion</h2>
 
-  <form class="login-container">
 
-             <form class="formulaire" action="{{ path('security_connexion') }}" method="post" id="connexion">
+             <form action="{{ path('security_connexion') }}" method="post" id="connexion" class="login-container"">
                <p>  <input name="_username"
                        value="{{ last_email }}"
                        class="form-control" required type="email"
@@ -33,7 +32,6 @@
                        placeholder="*******"> </p>
                 <input type="hidden" name="_target_path" value="/register" />
                 <p><input type="submit" value="Connexion"></p>
-            </form>
             </form>
 </div>
             
