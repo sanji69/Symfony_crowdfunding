@@ -29,6 +29,7 @@
       <excludeFolder url="file://$MODULE_DIR$/crowdfunding/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/crowdfunding/vendor/psr/log" />
       <excludeFolder url="file://$MODULE_DIR$/crowdfunding/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/crowdfunding/vendor/pugx/autocompleter-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/crowdfunding/vendor/sensio/framework-extra-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/crowdfunding/vendor/swiftmailer/swiftmailer" />
       <excludeFolder url="file://$MODULE_DIR$/crowdfunding/vendor/symfony/asset" />

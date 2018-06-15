@@ -7,7 +7,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use App\Entity\Articles;
-//use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 
 class ArticlesController extends Controller
@@ -36,36 +35,39 @@ class ArticlesController extends Controller
 
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
-        $user_id = $this
+        $user= $this
                 ->getUser()
-                ->getId()
             ;
 
         //Instance de l'entité
-        $article = new Articles;
+        $articles = new Articles;
 
-        $article->setUser($user_id);
-        $article->setActived(0);
+        $articles->setUser($user);
+
+        $articles->setActived(0);
 
 
         //Création du formulaire
-        $form = $this->createForm(ArticlesType::class, $article);
+        $form = $this->createForm(ArticlesType::class,  $articles);
 
-        $form->handleRequest($request);
+        //$form->handleRequest($request);
 
         //Récupération des données du formulaire
         if ($form->isSubmitted() && $form->isValid())
         {
+
             //Appel de l'Entity Manager et envoi en base de donnée
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($article);
-            $entityManager->flush();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($articles);
+            $em->flush();
+
+          
 
 
             //Redirection
-            return $this->redirectToRoute("articles/retrieve.html.twig", [
-                "title"=>$article->getTitle(),
-                "id"=>$article->getId()
+            return $this->redirectToRoute("articles/modify.html.twig", [
+                "title"=>$articles->getTitle(),
+                "id"=>$articles->getId()
             ]);
         }
 
@@ -80,29 +82,47 @@ class ArticlesController extends Controller
     /**
      * @Route("/modify", name="modifier_articles", methods={"GET", "POST"})
      */
-    public function modifyAction(Request $request)
+    public function modifyAction($title, $id)
     {
-        $articles = new Articles;
-        $form = $this->createForm(ArticlesType::class, $articles);
+        $em = $this->getDoctrine()->getManager();
 
-        if($form->isSubmitted() && $form->isValid()) {
-            $this->addFlash('success', 'artile updated');
-        }
+        $article = $em
+            ->getRepository('Articles')
+            ->find($id);
 
-        return $this->render('articles/modify.html.twig');
+
+            return $this->render("articles/modify.html.twig",
+            ["article"=>$article]
+
+             );
     }
 
     /**
      * @Route("/retrieve", name="mon_articles", methods={"GET"})
      */
-    public function retrieveAction($title, $id)
+    public function retrieveAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
         $article = $em
             ->getRepository(Articles::class)
             ->find($id);
+        $form = $this->createForm(ArticlesType::class, $article);
+        if($form->handleRequest($request)->isSubmitted())
+        {
+            $data =  $form->getData();
 
+            $em->persist($article);
+            $em->flush();
+            return $this->redirectToRoute('articles/modify.html.twig',
+                [
+                    "title"=>$article->getTile('title'),
+                    "id"=>$article->getId('id')
+                ]);
+        }
+
+
+        $form = $form->createView();
         return $this->render('articles/retrieve.html.twig', [
             "article" => $article
         ]);
@@ -113,22 +133,26 @@ class ArticlesController extends Controller
      */
     public function eraseAction()
     {
-        //doctrine -> actived = 0 -> envoi requete
-        // redirection index
+
         return $this->render('articles/erase.html.twig');
     }
 
     /**
      * @Route("/search", name="ma_recherche", methods={"GET"})
      */
-    public function searchAction()
+    public function searchAction(Request $request)
     {
-        //-> recherhe dans la bdd requete composé
+        $q = $request->query->get('q'); // use "term" instead of "q" for jquery-ui
+        $results = $this->getDoctrine()->getRepository('App:Articles')->findLikeName($q);
 
-        // -> $request = "SELECT * FROM articles WHERE title = ";
-        // -> $search = %recherche%;
-        // -> $request = $request.$search." OR content = ".$search;
+        return $this->render('search.json.twig', ['results' => $results]);
+    }
 
-        return $this->render('articles/search.html.twig');
+    public function getArticles($id = null)
+    {
+        $article = $this->getDoctrine()->getRepository('App:Articles')->find($id);
+
+        return $this->json($article->getName());
+
     }
 }

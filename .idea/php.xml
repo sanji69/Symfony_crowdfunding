@@ -77,6 +77,7 @@
       <path value="$PROJECT_DIR$/crowdfunding/vendor/egulias/email-validator" />
       <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/stopwatch" />
       <path value="$PROJECT_DIR$/crowdfunding/vendor/symfony/profiler-pack" />
+      <path value="$PROJECT_DIR$/crowdfunding/vendor/pugx/autocompleter-bundle" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
