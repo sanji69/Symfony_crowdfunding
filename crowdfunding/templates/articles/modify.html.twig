@@ -3,8 +3,16 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
+    <div>
+        <h2>{{ article.title }}</h2>
+
+        <div>{{ article.content }}</div>
+        <a href="{{ path('articles/retrieve.html.twig', {
+            "id":article.id
+        }) }}">Modifier l'aricle</a>
+    </div>
 
 
-    <h3>Modifier un article</h3>
+
 
 {% endblock %}
