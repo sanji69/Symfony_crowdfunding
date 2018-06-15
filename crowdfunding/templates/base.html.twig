@@ -5,8 +5,6 @@
         <title>{% block title %} BIZMAKER {% endblock %}</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
-<<<<<<< HEAD
-
 
         {% block stylesheets %}
 
@@ -19,40 +17,38 @@
         <link rel="stylesheet" href="{{ asset('build/css/style.css') }}" type="text/css" />
 
         {% endblock %}
-=======
-        {% block stylesheets %}{% endblock %}
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ path('index')}}">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('security_connexion')}}">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('user_registration')}}">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('security_logout')}}">Logout</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('dashboard')}}">Administration</a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </div>
-        </nav>
->>>>>>> 30bd1d601bc5b3e4113e5ef44ebb93aa00440213
-    </head>
-    <body>
+        {#<nav class="navbar navbar-expand-lg navbar-light bg-light">#}
+            {#<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">#}
+                {#<span class="navbar-toggler-icon"></span>#}
+            {#</button>#}
+
+            {#<div class="collapse navbar-collapse" id="navbarSupportedContent">#}
+                {#<ul class="navbar-nav mr-auto">#}
+                    {#<li class="nav-item active">#}
+                        {#<a class="nav-link" href="{{ path('index')}}">Home <span class="sr-only">(current)</span></a>#}
+                    {#</li>#}
+                    {#<li class="nav-item">#}
+                        {#<a class="nav-link" href="{{ path('security_connexion')}}">Login</a>#}
+                    {#</li>#}
+                    {#<li class="nav-item">#}
+                        {#<a class="nav-link" href="{{ path('user_registration')}}">Register</a>#}
+                    {#</li>#}
+                    {#<li class="nav-item">#}
+                        {#<a class="nav-link" href="{{ path('security_logout')}}">Logout</a>#}
+                    {#</li>#}
+                    {#<li class="nav-item">#}
+                        {#<a class="nav-link" href="{{ path('dashboard')}}">Administration</a>#}
+                    {#</li>#}
+                {#</ul>#}
+                {#<form class="form-inline my-2 my-lg-0">#}
+                    {#<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">#}
+                    {#<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>#}
+                {#</form>#}
+            {#</div>#}
+        {#</nav>#}
+    {#</head>#}
+    {#<body>#}
 
 
             <!-- css ball-load actualisation f5 -->
