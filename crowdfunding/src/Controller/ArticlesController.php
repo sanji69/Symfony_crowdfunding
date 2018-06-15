@@ -32,49 +32,77 @@ class ArticlesController extends Controller
      */
     public function createAction(Request $request)
     {
-
-        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
-
-        $user= $this
-                ->getUser()
-            ;
-
-        //Instance de l'entité
         $articles = new Articles;
 
-        $articles->setUser($user);
+        $form = $this->createForm(ArticlesType::class, $articles);
 
-        $articles->setActived(0);
-
-
-        //Création du formulaire
-        $form = $this->createForm(ArticlesType::class,  $articles);
-
-        //$form->handleRequest($request);
-
-        //Récupération des données du formulaire
-        if ($form->isSubmitted() && $form->isValid())
+        if($form->handleRequest($request)->isSubmitted())
         {
-
-            //Appel de l'Entity Manager et envoi en base de donnée
             $em = $this->getDoctrine()->getManager();
+
+            $data = $form->getData();
+
+            $user = $this->getUser();
+            $articles->setUser($user);
+            $articles->setActived(0);
+            $articles->setStatus(0);
             $em->persist($articles);
+
             $em->flush();
 
-          
-
-
-            //Redirection
-            return $this->redirectToRoute("articles/modify.html.twig", [
-                "title"=>$articles->getTitle(),
-                "id"=>$articles->getId()
-            ]);
+                return $this->redirectToRoute("articles/retrieve.html.twig", [
+                   "title"=>$articles->getTitle('title'),
+                   "id"=>$articles->getId('id')
+               ]);
         }
+            $form = $form->createView();
 
-        //Envois du formulaire au fichier de vue
-        return $this->render("articles/add.html.twig", array(
-            "form"=>$form->createView()
-        ));
+        return $this->render("articles/add.html.twig", [
+            "form"=>$form
+            ]);
+
+//        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+//
+//        $user= $this
+//                ->getUser()
+//            ;
+//
+//        //Instance de l'entité
+//        $articles = new Articles;
+//
+//        $articles->setUser($user);
+//
+//        $articles->setActived(0);
+//
+//
+//        //Création du formulaire
+//        $form = $this->createForm(ArticlesType::class,  $articles);
+//
+//        //$form->handleRequest($request);
+//
+//        //Récupération des données du formulaire
+//        if ($form->isSubmitted() && $form->isValid())
+//        {
+//
+//            //Appel de l'Entity Manager et envoi en base de donnée
+//            $em = $this->getDoctrine()->getManager();
+//            $em->persist($articles);
+//            $em->flush();
+//
+//
+//
+//
+//            //Redirection
+//            return $this->redirectToRoute("articles/modify.html.twig", [
+//                "title"=>$articles->getTitle(),
+//                "id"=>$articles->getId()
+//            ]);
+//        }
+//
+//        //Envois du formulaire au fichier de vue
+//        return $this->render("articles/add.html.twig", array(
+//            "form"=>$form->createView()
+//        ));
 
 
     }
@@ -107,10 +135,18 @@ class ArticlesController extends Controller
         $article = $em
             ->getRepository(Articles::class)
             ->find($id);
+
+        // Instance du formulaire
+
         $form = $this->createForm(ArticlesType::class, $article);
         if($form->handleRequest($request)->isSubmitted())
         {
             $data =  $form->getData();
+
+            $user = $this->getUser();
+            $articles->setUser($user);
+            $articles->setActived(0);
+            $articles->setStatus(0);
 
             $em->persist($article);
             $em->flush();
@@ -124,7 +160,7 @@ class ArticlesController extends Controller
 
         $form = $form->createView();
         return $this->render('articles/retrieve.html.twig', [
-            "article" => $article
+            "form" => $form
         ]);
     }
 

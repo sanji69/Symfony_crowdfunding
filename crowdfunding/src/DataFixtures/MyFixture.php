@@ -79,7 +79,7 @@ class MyFixture extends Fixture
         $article1->setTitle('titre1');
         $article1->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum');
         $article1->setGoal($i*$v);
-        $article1->setStatus(0);
+        $article1->setStatus(1000);
         $article1->setUser($user1);
         $article1->setActived(0);
         $manager->persist($article1);
@@ -91,7 +91,7 @@ class MyFixture extends Fixture
         $article2->setTitle('titre2');
         $article2->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum');
         $article2->setGoal($i*$v);
-        $article2->setStatus(0);
+        $article2->setStatus(1000);
         $article2->setUser($user2);
         $article2->setActived(1);
         $manager->persist($article2);
@@ -103,7 +103,7 @@ class MyFixture extends Fixture
         $article3->setTitle('titre3');
         $article3->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum');
         $article3->setGoal($i*$v);
-        $article3->setStatus(0);
+        $article3->setStatus(1000);
         $article3->setUser($user3);
         $article3->setActived(1);
         $manager->persist($article3);
@@ -115,7 +115,7 @@ class MyFixture extends Fixture
         $article4->setTitle('titre4');
         $article4->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum');
         $article4->setGoal($i*$v);
-        $article4->setStatus(0);
+        $article4->setStatus(1000);
         $article4->setUser($user1);
         $article4->setActived(0);
         $manager->persist($article4);
@@ -127,7 +127,7 @@ class MyFixture extends Fixture
         $article5->setTitle('titre5');
         $article5->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum');
         $article5->setGoal($i*$v);
-        $article5->setStatus(0);
+        $article5->setStatus(1000);
         $article5->setUser($user2);
         $article5->setActived(1);
         $manager->persist($article5);
@@ -139,7 +139,7 @@ class MyFixture extends Fixture
         $article6->setTitle('titre6');
         $article6->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum');
         $article6->setGoal($i*$v);
-        $article6->setStatus(0);
+        $article6->setStatus(1000);
         $article6->setUser($user3);
         $article6->setActived(1);
         $manager->persist($article6);
@@ -151,7 +151,7 @@ class MyFixture extends Fixture
         $article7->setTitle('titre7');
         $article7->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum');
         $article7->setGoal($i*$v);
-        $article7->setStatus(0);
+        $article7->setStatus(1000);
         $article7->setUser($user1);
         $article7->setActived(0);
         $manager->persist($article7);
@@ -163,7 +163,7 @@ class MyFixture extends Fixture
         $article8->setTitle('titre8');
         $article8->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum');
         $article8->setGoal($i*$v);
-        $article8->setStatus(0);
+        $article8->setStatus(1000);
         $article8->setUser($user2);
         $article8->setActived(1);
         $manager->persist($article8);
@@ -175,7 +175,7 @@ class MyFixture extends Fixture
         $article9->setTitle('titre9');
         $article9->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum');
         $article9->setGoal($i*$v);
-        $article9->setStatus(0);
+        $article9->setStatus(1000);
         $article9->setUser($user3);
         $article9->setActived(1);
         $manager->persist($article9);

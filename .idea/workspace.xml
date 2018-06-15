@@ -2,32 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01fd1d35-297f-4035-9132-3a918d42aa97" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/crowdfunding/src/DataFixtures/MyFixture.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Symfony_crowdfunding.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Symfony_crowdfunding.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowdfunding/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/crowdfunding/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowdfunding/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/crowdfunding/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowdfunding/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/crowdfunding/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowdfunding/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/crowdfunding/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowdfunding/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/crowdfunding/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowdfunding/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/crowdfunding/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowdfunding/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/crowdfunding/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowdfunding/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/crowdfunding/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crowdfunding/src/Controller/ArticlesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/crowdfunding/src/Controller/ArticlesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowdfunding/src/DataFixtures/AppFixtures.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowdfunding/src/Entity/Articles.php" beforeDir="false" afterPath="$PROJECT_DIR$/crowdfunding/src/Entity/Articles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowdfunding/src/Entity/Contributor.php" beforeDir="false" afterPath="$PROJECT_DIR$/crowdfunding/src/Entity/Contributor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowdfunding/src/Entity/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/crowdfunding/src/Entity/Users.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowdfunding/src/Form/ArticlesType.php" beforeDir="false" afterPath="$PROJECT_DIR$/crowdfunding/src/Form/ArticlesType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowdfunding/src/Migrations/Version20180612071437.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowdfunding/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/crowdfunding/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowdfunding/templates/articles/add.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/crowdfunding/templates/articles/add.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowdfunding/templates/articles/form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/crowdfunding/templates/articles/form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowdfunding/templates/articles/modify.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/crowdfunding/templates/articles/modify.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowdfunding/templates/articles/search.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/crowdfunding/templates/articles/search.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowdfunding/templates/articles/search.jason.twig" beforeDir="false" afterPath="$PROJECT_DIR$/crowdfunding/templates/articles/search.jason.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowdfunding/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/crowdfunding/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,23 +20,8 @@
       <file leaf-file-name="ArticlesController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/crowdfunding/src/Controller/ArticlesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="63" column="40" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
-              <folding>
-                <element signature="e#34#60#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegistrationController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crowdfunding/src/Controller/Users/RegistrationController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
-              <folding>
-                <element signature="e#40#63#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="-782">
+              <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -88,14 +49,14 @@
         <option value="$PROJECT_DIR$/crowdfunding/templates/articles/search.html.twig" />
         <option value="$PROJECT_DIR$/crowdfunding/templates/articles/search.jason.twig" />
         <option value="$PROJECT_DIR$/crowdfunding/public/index.php" />
-        <option value="$PROJECT_DIR$/crowdfunding/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/crowdfunding/src/Entity/Users.php" />
         <option value="$PROJECT_DIR$/crowdfunding/src/Entity/Contributor.php" />
         <option value="$PROJECT_DIR$/crowdfunding/src/DataFixtures/MyFixture.php" />
         <option value="$PROJECT_DIR$/crowdfunding/src/DataFixtures/AppFixtures.php" />
-        <option value="$PROJECT_DIR$/crowdfunding/src/Entity/Articles.php" />
         <option value="$PROJECT_DIR$/crowdfunding/src/Form/ArticlesType.php" />
         <option value="$PROJECT_DIR$/crowdfunding/templates/articles/add.html.twig" />
+        <option value="$PROJECT_DIR$/crowdfunding/templates/base.html.twig" />
+        <option value="$PROJECT_DIR$/crowdfunding/src/Entity/Articles.php" />
         <option value="$PROJECT_DIR$/crowdfunding/src/Controller/ArticlesController.php" />
       </list>
     </option>
@@ -207,6 +168,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -235,6 +197,29 @@
               <item name="Symfony_crowdfunding" type="b2602c69:ProjectViewProjectNode" />
               <item name="Symfony_crowdfunding" type="462c0819:PsiDirectoryNode" />
               <item name="crowdfunding" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Symfony_crowdfunding" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Symfony_crowdfunding" type="462c0819:PsiDirectoryNode" />
+              <item name="crowdfunding" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Symfony_crowdfunding" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Symfony_crowdfunding" type="462c0819:PsiDirectoryNode" />
+              <item name="crowdfunding" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Symfony_crowdfunding" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Symfony_crowdfunding" type="462c0819:PsiDirectoryNode" />
+              <item name="crowdfunding" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -243,14 +228,6 @@
               <item name="crowdfunding" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Symfony_crowdfunding" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Symfony_crowdfunding" type="462c0819:PsiDirectoryNode" />
-              <item name="crowdfunding" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-              <item name="Users" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Symfony_crowdfunding" type="b2602c69:ProjectViewProjectNode" />
@@ -313,7 +290,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -351,28 +327,28 @@
       <workItem from="1528787162341" duration="313000" />
       <workItem from="1528788946380" duration="19650000" />
       <workItem from="1528874722335" duration="22032000" />
-      <workItem from="1528959741177" duration="16009000" />
+      <workItem from="1528959741177" duration="18849000" />
+      <workItem from="1529046710530" duration="3781000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60858000" />
+    <option name="totallyTimeSpent" value="67479000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28705636" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32939914" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28705636" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32832617" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -381,6 +357,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32832617" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,23 +367,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/crowdfunding/src/Controller/ArticlesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2278">
-          <caret line="138" column="62" selection-start-line="138" selection-start-column="62" selection-end-line="138" selection-end-column="62" />
-          <folding>
-            <element signature="e#34#60#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crowdfunding/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crowdfunding/templates/articles/search.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -476,9 +436,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
           <caret line="53" column="41" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
-          <folding>
-            <element signature="e#40#63#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -582,16 +539,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crowdfunding/templates/articles/search.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crowdfunding/templates/articles/search.jason.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/crowdfunding/templates/articles/erase.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -599,27 +546,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crowdfunding/src/DataFixtures/AppFixtures.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crowdfunding/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="46" column="31" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crowdfunding/src/Entity/Articles.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="123" column="5" lean-forward="true" selection-start-line="123" selection-start-column="5" selection-end-line="123" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/crowdfunding/src/DataFixtures/AppFixtures.php" />
     <entry file="file://$PROJECT_DIR$/crowdfunding/src/Entity/Contributor.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -641,13 +568,6 @@
           <folding>
             <element signature="e#30#78#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crowdfunding/src/Form/ArticlesType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -709,19 +629,71 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
           <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crowdfunding/config/packages/framework.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crowdfunding/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crowdfunding/public/build/css/app.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crowdfunding/public/build/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
           <folding>
-            <element signature="e#40#63#0#PHP" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crowdfunding/templates/articles/search.jason.twig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crowdfunding/templates/articles/search.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crowdfunding/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="142" column="8" selection-start-line="142" selection-start-column="8" selection-end-line="142" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crowdfunding/src/Form/ArticlesType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crowdfunding/src/Entity/Articles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="118" column="5" lean-forward="true" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/crowdfunding/src/Controller/ArticlesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="63" column="40" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
-          <folding>
-            <element signature="e#34#60#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="-782">
+          <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
         </state>
       </provider>
     </entry>
