@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\ArticlesType;
+use App\Repository\ArticlesRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -15,13 +16,12 @@ class ArticlesController extends Controller
     /**
     * @Route("/", name="index")
     */
-    public function indexAction()
+    public function indexAction(request $request)
     {
+        $repository = $this->getDoctrine()->getRepository(Articles::class);
        //Appel de l'entity Manager
-        $em = $this->getDoctrine()->getManager();
-        $articles = $em
-            ->getRepository(Articles::class)
-            ->findAll();
+        $articles = $repository->articlesNews();
+
         return $this->render("articles/index.html.twig", [
             "articles" => $articles
         ]);
@@ -51,8 +51,8 @@ class ArticlesController extends Controller
             $em->flush();
 
                 return $this->redirectToRoute("articles/retrieve.html.twig", [
-                   "title"=>$articles->getTitle('title'),
-                   "id"=>$articles->getId('id')
+                   "title"=>$articles->getTitle(),
+                   "id"=>$articles->getId()
                ]);
         }
             $form = $form->createView();
@@ -61,56 +61,13 @@ class ArticlesController extends Controller
             "form"=>$form
             ]);
 
-//        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
-//
-//        $user= $this
-//                ->getUser()
-//            ;
-//
-//        //Instance de l'entité
-//        $articles = new Articles;
-//
-//        $articles->setUser($user);
-//
-//        $articles->setActived(0);
-//
-//
-//        //Création du formulaire
-//        $form = $this->createForm(ArticlesType::class,  $articles);
-//
-//        //$form->handleRequest($request);
-//
-//        //Récupération des données du formulaire
-//        if ($form->isSubmitted() && $form->isValid())
-//        {
-//
-//            //Appel de l'Entity Manager et envoi en base de donnée
-//            $em = $this->getDoctrine()->getManager();
-//            $em->persist($articles);
-//            $em->flush();
-//
-//
-//
-//
-//            //Redirection
-//            return $this->redirectToRoute("articles/modify.html.twig", [
-//                "title"=>$articles->getTitle(),
-//                "id"=>$articles->getId()
-//            ]);
-//        }
-//
-//        //Envois du formulaire au fichier de vue
-//        return $this->render("articles/add.html.twig", array(
-//            "form"=>$form->createView()
-//        ));
-
 
     }
 
     /**
-     * @Route("/modify", name="modifier_articles", methods={"GET", "POST"})
+     * @Route("/retrieve", name="retrieve", methods={"GET", "POST"})
      */
-    public function modifyAction($title, $id)
+    public function retrieveAction($title, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -119,16 +76,16 @@ class ArticlesController extends Controller
             ->find($id);
 
 
-            return $this->render("articles/modify.html.twig",
-            ["article"=>$article]
+            return $this->render("articles/retrieve.html.twig",
+            ["article" => $article]
 
              );
     }
 
     /**
-     * @Route("/retrieve", name="mon_articles", methods={"GET"})
+     * @Route("/update", name="mon_articles", methods={"GET"})
      */
-    public function retrieveAction(Request $request, $id)
+    public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -136,7 +93,7 @@ class ArticlesController extends Controller
             ->getRepository(Articles::class)
             ->find($id);
 
-        // Instance du formulaire
+
 
         $form = $this->createForm(ArticlesType::class, $article);
         if($form->handleRequest($request)->isSubmitted())
@@ -144,22 +101,22 @@ class ArticlesController extends Controller
             $data =  $form->getData();
 
             $user = $this->getUser();
-            $articles->setUser($user);
-            $articles->setActived(0);
-            $articles->setStatus(0);
+            $article->setUser($user);
+            $article->setActived(0);
+            $article->setStatus(0);
 
             $em->persist($article);
             $em->flush();
-            return $this->redirectToRoute('articles/modify.html.twig',
+            return $this->redirectToRoute('articles/retrieve.html.twig',
                 [
-                    "title"=>$article->getTile('title'),
-                    "id"=>$article->getId('id')
+                    "title"=>$article->getTile(),
+                    "id"=>$article->getId()
                 ]);
         }
 
 
         $form = $form->createView();
-        return $this->render('articles/retrieve.html.twig', [
+        return $this->render('articles/update.html.twig', [
             "form" => $form
         ]);
     }

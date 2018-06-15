@@ -1,22 +1,47 @@
+{#{% extends 'base.html.twig' %}#}
+
+{#{% block title %}BIZMAKER{% endblock %}#}
+{#{% block stylesheet %}#}
+
+ {#<link rel="stylesheet" href="{{ asset('build/css/style.css') }}" type="text/css" />#}
+            {#<link rel="stylesheet" href="{{ asset('build/css/responsive.css') }}" type="text/css" />#}
+            {#<link rel="stylesheet" href="{{ asset('build/css/menu.css') }}" type="text/css" />#}
+            {#<link rel="stylesheet" href="{{ asset('build/css/app.css') }}" type="text/css" />#}
+            {#<link rel="stylesheet" href="{{ asset('build/css/grid.css') }}" type="text/css" />#}
+            {#<link rel="stylesheet" href="{{ asset('build/css/jquery.bxslider.css') }}" type="text/css" />#}
+            {#<link rel="stylesheet" href="{{ asset('build/css/animate.css') }}" type="text/css" />#}
+{#{% endblock %}#}
+
+{#{% block body %}#}
+
+{#<h1> BONJOUR </h1>#}
+
+    {#<h3>Accueil</h3>#}
+
+
+{#{% endblock %}#}
+
+
 {% extends 'base.html.twig' %}
 
-{% block title %}BIZMAKER{% endblock %}
-{% block stylesheet %}
-
- <link rel="stylesheet" href="{{ asset('build/css/style.css') }}" type="text/css" />
-            <link rel="stylesheet" href="{{ asset('build/css/responsive.css') }}" type="text/css" />
-            <link rel="stylesheet" href="{{ asset('build/css/menu.css') }}" type="text/css" />
-            <link rel="stylesheet" href="{{ asset('build/css/app.css') }}" type="text/css" />
-            <link rel="stylesheet" href="{{ asset('build/css/grid.css') }}" type="text/css" />
-            <link rel="stylesheet" href="{{ asset('build/css/jquery.bxslider.css') }}" type="text/css" />
-            <link rel="stylesheet" href="{{ asset('build/css/animate.css') }}" type="text/css" />
-{% endblock %}
-
 {% block body %}
-
-<h1> BONJOUR </h1>
-
-    <h3>Accueil</h3>
+    <div class="container">
+        <h2>Liste des articles</h2>
 
 
+
+        {% for article in articles %}
+            <div>
+                <h2>{{article.title}}</h2>
+
+                <div>{{article.content}}</div>
+                <a href="{{path('articles/retrieve.html.twig',{
+                    "title": article.title,
+                    "id": article.id
+
+                })}}">lire l'article</a>
+            </div>
+        {% endfor %}
+
+    </div>
 {% endblock %}

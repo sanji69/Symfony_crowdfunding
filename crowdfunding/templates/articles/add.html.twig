@@ -4,14 +4,7 @@
 
     {% block body %}
 
-    {#{{include("articles/form.html.twig")}}#}
-        {{ form_start(form) }}
-        {{ form_errors(form) }}
+    {{include("articles/form.html.twig")}}
 
-    {{ form_rest(form) }}
-
-        <button type="submit" class="btn btn-success" name="button">Submit</button>
-
-        {{ form_end(form) }}
 
     {% endblock %}

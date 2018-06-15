@@ -31,6 +31,18 @@ class ArticlesRepository extends ServiceEntityRepository
 
     }
 
+    public function articlesNews()
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.actived = :val')
+            ->setParameter('val', 1)
+            ->orderBy('a.created_at', 'DESC')
+            ->setMaxResults(4)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
 //    /**
 //     * @return Articles[] Returns an array of Articles objects
 //     */

@@ -1,11 +1,29 @@
-    {% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %}
 
-    {% block title %}Accueil{% endblock %}
+{% block title %}Accueil{% endblock %}
 
-    {% block body %}
+{% block body %}
+    <div>
+        <h2>{{ article.title }}</h2>
+
+        <div>{{ article.content }}</div>
+        {% if article.goal == article.status %}
+            <p>Objectif : Accomplis</p>
+        {%  else %}
+            <p> Objectif : {{ article.status }} sur {{ article.goal }}</p>
+        {% endif %}
+        {% if article.actived == 0 %}
+            <p>Inactif</p>
+        {% else %}
+            <p>Actif</p>
+        {% endif %}
+        <p>Auteur : {{ article.user.username }}</p>
+        <a href="{{ path('articles/update.html.twig', {
+            "id":article.id
+        }) }}">Modifier l'aricle</a>
+    </div>
 
 
-    <h3>Mon article</h3>
-    {{include("articles/form.html.twig")}}
 
-    {% endblock %}
+
+{% endblock %}
