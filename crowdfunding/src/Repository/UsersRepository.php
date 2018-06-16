@@ -19,10 +19,22 @@ class UsersRepository extends ServiceEntityRepository
         parent::__construct($registry, Users::class);
     }
 
+    public function updateUsersRole(array $users)
+    {
+        return$this->createQueryBuilder('u')
+            ->update('u.roles', $users['roles'])
+            ->where('u.username', $users('username'))
+            ->getQuery()
+            ->getResult()
+        ;
+
+    }
+
 //    /**
 //     * @return Users[] Returns an array of Users objects
 //     */
     /*
+     *
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('u')

@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Users;
+use Doctrine\ORM\Query\Expr\Select;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -10,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Flex\Options;
 
 class UsersType extends AbstractType
 {
@@ -42,4 +44,5 @@ class UsersType extends AbstractType
             'data_class' => Users::class,
         ));
     }
+
 }

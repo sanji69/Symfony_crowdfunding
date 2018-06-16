@@ -6,44 +6,44 @@
 
 	<h3>Administration</h3>
 
-    <button>Users</button>
+    <form method="post" action="">
+        {% for article in articles %}
+            <div>
+                <p>titre : {{ article.title }}</p>
+                <p> contenu :{{ article.content }}</p>
+                {% if article.goal <= article.status %}
+                    <p>Objectif : Accomplis</p>
+                {%  else %}
+                     <p> Objectif : {{ article.status }} sur {{ article.goal }}</p>
+                {% endif %}
+                {% if article.actived == 0 %}
+                    <button id="enable">Activer</button>
+                {% else %}
+                    <button id="disable">Désactiver</button>
+                {% endif %}
 
-    <h5>Utilisateur</h5>
+                <p>Auteur : {{ article.user.username }}</p>
+                <h5>Contribution</h5>
 
-    {% for user in users %}
-        <div> <p>Identifient : {{ user.username }}</p>
-        <p>Nom : {{ user.lastname }}</p>
-        <p>Prenom : {{ user.firstname }}</p>
-        <p>Email : {{ user.email }}</p>
-        </div>
-    {% endfor %}
+                {% for cont in conts %}
+                    {% if cont.articles.id == article.id %}
+                        <p> {{ cont.users.username }} a versé {{ cont.value }}</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endfor %}>
+    </form>
+    <br>
 
 
-    <button>Articles</button>
-    
-    <h5>Article</h5>
-
-    {% for article in articles %}
-        <div> <p>titre : {{ article.title }}</p>
-        <p> contenu :{{ article.content }}</p>
-            {% if article.goal <= article.status %}
-                <p>Objectif : Accomplis</p>
-            {%  else %}
-                 <p> Objectif : {{ article.status }} sur {{ article.goal }}</p>
-            {% endif %}
-            {% if article.actived == 0 %}
-                <p>Inactif</p>
-            {% else %}
-                <p>Actif</p>
-            {% endif %}
-            <p>Auteur : {{ article.user.username }}</p>;
-        </div>
-    {% endfor %}
-
-    <h5>Contribution</h5>
-
-    {% for cont in conts %}
-            <p> {{ cont.users.username }} a versé {{ cont.value }} sur {{ cont.articles.title }}</p>
-    {% endfor %}
 
 {% endblock %}
+
+
+        {% block javascripts %}
+            {#<script>#}
+                {#$.document(function (event) {#}
+                    {##}
+                {#})#}
+            {#</script>#}
+        {% endblock %}
