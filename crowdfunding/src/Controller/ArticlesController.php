@@ -67,16 +67,15 @@ class ArticlesController extends Controller
     }
 
     /**
-     * @Route("/retrieve", name="retrieve", methods={"GET", "POST"})
+     * @Route("/retrieve/{id}", name="retrieve", methods={"GET", "POST"})
      */
     public function retrieveAction($id)
     {
         $em = $this->getDoctrine()->getManager();
-
         $article = $em
             ->getRepository(Articles::class)
-            ->find($id);
-
+            ->find($id)
+        ;
 
             return $this->render("articles/retrieve.html.twig",
             ["article" => $article]
@@ -85,7 +84,7 @@ class ArticlesController extends Controller
     }
 
     /**
-     * @Route("/update", name="mon_articles", methods={"GET"})
+     * @Route("/update/{id}", name="update", methods={"GET", "POST"})
      */
     public function updateAction(Request $request, $id)
     {
@@ -93,7 +92,8 @@ class ArticlesController extends Controller
 
         $article = $em
             ->getRepository(Articles::class)
-            ->find($id);
+            ->find($id)
+        ;
 
         $form = $this->createForm(ArticlesType::class, $article);
         if($form->handleRequest($request)->isSubmitted())
@@ -109,7 +109,6 @@ class ArticlesController extends Controller
             $em->flush();
             return $this->redirectToRoute('retrieve',
                 [
-                    "title"=>$article->getTile(),
                     "id"=>$article->getId()
                 ]);
         }

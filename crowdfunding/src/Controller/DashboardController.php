@@ -31,16 +31,16 @@ class DashboardController extends AbstractController
 
 
         //activé articles
-        if($form->handleRequest($request)->isSubmitted())
-        {
-            $em = $this->getDoctrine()->getManager();
-
-            $articles->setActived(1);
-            $em->persist($articles);
-
-            $em->flush();
-        }
-        $form = $form->createView();
+//        if($form->handleRequest($request)->isSubmitted())
+//        {
+//            $em = $this->getDoctrine()->getManager();
+//
+//            $articles->setActived(1);
+//            $em->persist($articles);
+//
+//            $em->flush();
+//        }
+//        $form = $form->createView();
 
 
         return $this->render('dashboard/dashboard.html.twig', [
