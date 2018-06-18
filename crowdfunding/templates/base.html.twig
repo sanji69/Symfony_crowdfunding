@@ -9,7 +9,7 @@
             <link rel="stylesheet" href="{{ asset('build/css/style.css') }}" type="text/css" />
             <link rel="stylesheet" href="{{ asset('build/css/responsive.css') }}" type="text/css" />
             <link rel="stylesheet" href="{{ asset('build/css/menu.css') }}" type="text/css" />
-            <link rel="stylesheet" href="{{ asset('build/css/app.css') }}" type="text/css" />
+            {# <link rel="stylesheet" href="{{ asset('build/css/app.css') }}" type="text/css" /> #}
             <link rel="stylesheet" href="{{ asset('build/css/grid.css') }}" type="text/css" />
             <link rel="stylesheet" href="{{ asset('build/css/jquery.bxslider.css') }}" type="text/css" />
             <link rel="stylesheet" href="{{ asset('build/css/animate.css') }}" type="text/css" />
@@ -35,7 +35,7 @@
     		  
     			<div class="col-lg-12">
     				<div class="logo">
-                		<a href="#"><img src="{{ asset('assets/images/logo.png') }}" /></a>
+                	<a href="{{ path('index')}}"><img src="{{ asset('assets/images/logo.png') }}" /></a>
                     </div>
                     <nav class="nav-collapse">
                     
@@ -98,11 +98,12 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-         <script src="{{ asset('build/js/app.js') }}"></script>
+        <script src="{{ asset('build/js/app.js') }}"></script>
         <script src="{{ asset('build/js/fastclick.js') }}"></script>
         <script src="{{ asset('build/js/fixed-responsive-nav.js') }}"></script>   
         <script src="{{ asset('build/js/jquery.bxslider.js') }}"></script>   
-        <script src="{{ asset('build/js/jquery.easing.min.js') }}"></script>   
+        <script src="{{ asset('build/js/jquery.easing.min.js') }}"></script>
+        <script src="{{ asset('build/js/responsive-nav.js') }}"></script>
         <script src="{{ asset('build/js/script.js') }}"></script>   
         <script src="{{ asset('build/js/scroll.js') }}"></script>   
         <script src="{{ asset('build/js/waypoints.js') }}"></script>   
