@@ -181,7 +181,7 @@ class Users implements UserInterface
     }
     public function setRoles($roles): void
     {
-        $this->roles[] = $roles;
+        $this->roles[0] = $roles;
     }
 
     public function getSalt()

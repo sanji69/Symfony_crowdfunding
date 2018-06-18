@@ -38,7 +38,7 @@
         }
         .my_link
         {
-            color: Black;
+            color: darkblue;
         }
         .title
         {
@@ -65,7 +65,7 @@
             -webkit-border-radius: 25px;
             border-radius: 25px;
             font: normal 16px/1 "Times New Roman", Times, serif;
-            color: rgba(255,255,255,1);
+            color: black;
             text-align: center;
             -o-text-overflow: ellipsis;
             text-overflow: ellipsis;
@@ -108,9 +108,9 @@
                 {% endif %}
                 <a href="{{ path('retrieve', {'id': article.id}) }}" class="my_link">Détail</a>
                 {% if article.actived == 0  %}
-                    <a href="{{ path('activer', {'id': article.id}) }}" class="my_link">>Activer</a>
+                    <a href="{{ path('activer', {'id': article.id}) }}" class="my_link">Activer</a>
                 {% elseif article.actived == 1 %}
-                    <a href="{{ path('desactiver', {'id': article.id}) }}" class="my_link">>Désactiver</a>
+                    <a href="{{ path('desactiver', {'id': article.id}) }}" class="my_link">Désactiver</a>
                 {% endif %}
 
                 <p>Auteur : {{ article.user.username }}</p>
