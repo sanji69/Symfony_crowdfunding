@@ -58,6 +58,47 @@
     {{ form_rest(form) }}
     {{ form_end(form) }}
 
-    </div>
+    </div> 
+
+    {% block stylesheet %}
+    <link rel="stylesheet" href="{{ asset('build/css/form.css') }}" type="text/css"/>
+    
+    {% endblock %}
+    
+	<div class="container-article100">
+		<div class="wrap-article100">
+			<form class="article100-form validate-form">
+				<span class="article100-form-title">
+					Lancer votre projet
+				</span>
+
+				<div class="wrap-input100 validate-input bg1" data-validate="Le titre de votre projet">
+					<span class="label-input100">Titre </span>
+					<input class="input100" type="text" name="name" placeholder="Titre du projet">
+				</div>
+
+	
+	<div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
+					<span class="label-input100"> Goal</span>
+					<input class="input100" type="text" name="name" placeholder="">
+				</div>
+
+				<div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Taper votre message ici">
+					<span class="label-input100">Message</span>
+					<textarea class="input100" name="message" placeholder="Votre message"></textarea>
+				</div>
+
+				<div class="container-article100-form-btn">
+					<button class="article100-form-btn">
+						<span>
+							Créer votre projet
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
 
 {% endblock %}
