@@ -63,6 +63,17 @@ class MyFixture extends Fixture
         $manager->persist($user3);
         $this->addReference('john_user', $user3);
 
+        // user ADMIN
+        $user4 = new Users();
+        $user4->setUsername('Kami-Sama');
+        $user4->setLastname('Vinsmock');
+        $user4->setFirstname('Sanji');
+        $user4->setPassword($this->passwordEncoder->encodePassword($user1, 'bob'));
+        $user4->setEmail('sanji@admin.com');
+        $user4->setToken(rand(250, 1000));
+        $user4->setRoles('ROLE_ADMIN');
+        $manager->persist($user4);
+        $this->addReference('Sanji_Admin', $user4);
 
         /*
          * Fin Users Fixtures
@@ -180,6 +191,28 @@ class MyFixture extends Fixture
         $article9->setActived(1);
         $manager->persist($article9);
 
+
+        $i = rand(250, 1000);
+        $v = rand(250, 1000);
+        $article10 = new Articles();
+        $article10->setTitle('One_Piece');
+        $article10->setContent('Luffy, un jeune garçon, rêve de devenir le Roi des Pirates en trouvant le One Piece, le trésor ultime rassemblé par Gol D. Roger, le seul pirate à avoir jamais porté le titre de Roi des Pirates. Shanks le Roux, un pirate qui est hébergé par les villageois du village de Luffy, est le modèle de Luffy depuis que le pirate a sauvé la vie du garçon. Un jour, Luffy mange un des fruits du démon, qui était détenu par l\'équipage de Shanks, ce qui fait de lui un homme-caoutchouc. À son départ, Shanks donne à Luffy son chapeau de paille. Luffy ne doit lui rendre ce chapeau que lorsqu\'il sera devenu un fier pirate sous peine de détruire cette promesse.');
+        $article10->setGoal($i*$v);
+        $article10->setStatus(0);
+        $article10->setUser($user4);
+        $article10->setActived(1);
+        $manager->persist($article10);
+
+        $i = rand(250, 1000);
+        $v = rand(250, 1000);
+        $article11 = new Articles();
+        $article11->setTitle('One_Piece2');
+        $article11->setContent('Dix ans plus tard, Luffy part de son village pour se constituer un équipage et trouver le One Piece. Pour échapper à la noyade, il s\'enferme dans un tonneau et se fait repêcher par un jeune garçon du nom de Kobby. Ce dernier rêve de devenir un soldat de la Marine, mais par un coup du sort, s\'est retrouvé enrôlé dans l\'équipage de la terrible Lady Alvida. Ils rencontrent ensuite Roronoa Zoro, un terrible chasseur de primes qui est détenu par la Marine. Zoro accepte finalement de rejoindre l\'équipage à condition que Luffy réussisse à trouver ses sabres qui sont détenus par le Colonel Morgan, le chef des marines de l\'île. Après un combat contre Morgan, Luffy réussit à reprendre les trois épées et part avec Zoro en laissant Kobby réaliser son rêve.');
+        $article11->setGoal($i*$v);
+        $article11->setStatus(0);
+        $article11->setUser($user4);
+        $article11->setActived(1);
+        $manager->persist($article11);
         /*
          * Fin Articles Fixtures
          */
