@@ -29,7 +29,11 @@
             {% endif %}
         {% endif %}
         <br>
-        <a href="{{ path('update', {'id': article.id}) }}">Modifier l'aricle</a>
+        {% if app.user is not empty %}
+            {% if app.user.roles[0] == 'ROLE_ADMIN' or app.user.username == article.user.id %}
+                <a href="{{ path('update', {'id': article.id}) }}">Modifier l'aricle</a>
+            {% endif %}
+        {% endif %}
     </div>
 
 
