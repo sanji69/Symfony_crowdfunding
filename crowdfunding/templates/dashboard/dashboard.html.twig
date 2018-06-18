@@ -75,6 +75,11 @@
                     Actif
                 {% endif %}
                 <a href="{{ path('retrieve', {'id': article.id}) }}" class="my_link">Détail</a>
+                {% if article.actived == 0  %}
+                    <a href="{{ path('activer', {'id': article.id}) }}" class="my_link">>Activer</a>
+                {% elseif article.actived == 1 %}
+                    <a href="{{ path('desactiver', {'id': article.id}) }}" class="my_link">>Désactiver</a>
+                {% endif %}
 
                 <p>Auteur : {{ article.user.username }}</p>
                 <h5>Contribution</h5>

@@ -155,7 +155,7 @@ class ArticlesController extends Controller
         $em->persist($article);
         $em->flush();
 
-        return $this->redirectToRoute("retrieve", array(
+        return $this->redirectToRoute("dashboard", array(
             "id"=> $id
         ));
     }
