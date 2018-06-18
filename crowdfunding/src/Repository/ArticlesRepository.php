@@ -43,6 +43,17 @@ class ArticlesRepository extends ServiceEntityRepository
         ;
     }
 
+    public function articleStatusUpdate($id, $value)
+    {
+        return $this->createQueryBuilder('a')
+            ->update('a.status')
+            ->where('a.id = :val')
+            ->setParameter('val', $id)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
 //    /**
 //     * @return Articles[] Returns an array of Articles objects
 //     */

@@ -2,12 +2,15 @@
 
 namespace App\Controller;
 
+use App\Entity\Contributor;
 use App\Form\ArticlesType;
+use App\Form\ContributorType;
 use App\Repository\ArticlesRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use App\Entity\Articles;
+use \DateTime;
 
 
 class ArticlesController extends Controller
@@ -69,18 +72,44 @@ class ArticlesController extends Controller
     /**
      * @Route("/retrieve/{id}", name="retrieve", methods={"GET", "POST"})
      */
-    public function retrieveAction($id)
+    public function retrieveAction($id, Request $request)
     {
         $em = $this->getDoctrine()->getManager();
         $article = $em
             ->getRepository(Articles::class)
-            ->find($id)
-        ;
+            ->find($id);
 
-            return $this->render("articles/retrieve.html.twig",
-            ["article" => $article]
+        $contrib = new Contributor();
+        $form = $this->createForm(ContributorType::class, $contrib);
 
-             );
+        if($form->handleRequest($request)->isSubmitted())
+        {
+            //ajout de la transaction en base de donnée
+
+            $em = $this->getDoctrine()->getManager();
+            $data = $form->getData();
+            $user = $this->getUser();
+            $contrib->setUsers($user);
+            $submit = new \DateTime();
+            $contrib->setSubmitAt($submit);
+            $contrib->setArticles($article);
+            $em->persist($contrib);
+            $em->flush();
+
+            //mise a jour du status articles dans la BDD
+
+            $status = $article->getStatus();
+            $status += $data->getValue();
+            $article->setStatus($status);
+            $em->persist($article);
+            $em->flush();
+        }
+
+        return $this->render("articles/retrieve.html.twig",
+            [
+                "article" => $article,
+                'form' => $form->createView()
+            ]);
     }
 
     /**
@@ -130,7 +159,7 @@ class ArticlesController extends Controller
     }
 
 //    /**
-//     * @Route("/search", name="ma_recherche", methods={"GET"})
+//     * @Route("/search", name="search", methods={"GET"})
 //     */
 //    public function searchAction(Request $request)
 //    {

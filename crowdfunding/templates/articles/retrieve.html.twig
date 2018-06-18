@@ -4,7 +4,6 @@
 
 {% block body %}
     <div>
-        {#{{ dump(article) }}#}
 
         <h2>{{ article.title }}</h2>
 
@@ -14,12 +13,13 @@
         {%  else %}
             <p> Objectif : {{ article.status }} sur {{ article.goal }}</p>
         {% endif %}
-        {% if article.actived == 0 %}
-            <p>Inactif</p>
-        {% else %}
-            <p>Actif</p>
-        {% endif %}
         <p>Auteur : {{ article.user.username }}</p>
+        {% if app.user is not empty %}
+            {{ form_start(form) }}
+            {{ form_row(form.value) }}
+            <button type="submit">Validez!</button>
+            {{ form_end(form) }}
+        {% endif %}
         <a href="{{ path('update', {'id': article.id}) }}">Modifier l'aricle</a>
     </div>
 
