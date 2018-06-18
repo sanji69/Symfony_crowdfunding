@@ -1,71 +1,74 @@
-
-{% block body %}
-
-    <div class="container">
-
-        {{ form_start(form) }}
-        {{ form_errors(form) }}
-
-        <div class="form-group row">
-            {{ form_label(form.title, null, {
-                'label_attr': {
-                    'class': 'col-sm-2 col-form-label'
-                }})
-            }}
-            <div class="col-sm-10">
-                {{ form_widget(form.title, {
-                    'attr': {
-                        'class': 'form-conrol'
-                    }})
-                }}
-            </div>
-        </div>
-
-    </div>
-
-    <div class="form-group row">
-        {{ form_label(form.goal, null, {
-            'label_attr': {
-                'class': 'col-sm-2 col-form-label'
-            }})
-        }}
-        <div class="col-sm-10">
-            {{ form_widget(form.goal, {
-                'attr': {
-                    'class': 'form-conrol'
-                }})
-            }}
-        </div>
-    </div>
-
-    <div class="form-group row">
-        {{ form_label(form.content, null, {
-            'label_attr': {
-                'class': 'col-sm-2 col-form-label'
-            }})
-        }}
-        <div class="col-sm-10">
-            {{ form_widget(form.content, {
-                'attr': {
-                    'class': 'form-conrol'
-                }})
-            }}
-        </div>
-    </div>
-
-    <button type="submit" class="btn btn-success" name="button">Submit</button>
-
-    {{ form_rest(form) }}
-    {{ form_end(form) }}
-
-    </div> 
-
-    {% block stylesheet %}
+{% block stylesheet %}
     <link rel="stylesheet" href="{{ asset('build/css/form.css') }}" type="text/css"/>
     
     {% endblock %}
+
+
+{% block body %}
+
+    <div class="container6">
+        <div id="form-main">
+            <div id="form-div">
+<h2 class="form-header">Création de votre projet</h2>
+                {{ form_start(form) }}
+                {{ form_errors(form) }}
+
+                <div class="form-group row">
+                    {{ form_label(form.title, null, {
+                'label_attr': {
+                    'class': 'col-sm-2 col-form-label'
+                }}) }}
+                    <div class="col-sm-10">
+                        {{ form_widget(form.title, {
+                    'attr': {
+                        'class': 'form-control'
+                    }}) }}
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group row">
+                {{ form_label(form.goal, null, {
+            'label_attr': {
+                'class': 'col-sm-2 col-form-label'
+            }}) }}
+                <div class="col-sm-10">
+                    {{ form_widget(form.goal, {
+                'attr': {
+                    'class': 'form-control'
+                }}) }}
+                </div>
+            </div>
+
+            <div class="form-group row">
+                {{ form_label(form.content, null, {
+            'label_attr': {
+                'class': 'col-sm-2 col-form-label'
+            }}) }}
+                <div class="col-sm-10">
+                    {{ form_widget(form.content, {
+                'attr': {
+                    'class': 'form-control'
+                }}) }}
+                </div>
+            </div>
+
+            <button type="submit"  class="submit" name="button">Submit</button>
+
+            {{ form_rest(form) }}
+            {{ form_end(form) }}
+
+        </div>
+    </div>
+</div>
+
+{# {% block stylesheet %}
+    <link rel="stylesheet" href="{{ asset('build/css/form.css') }}" type="text/css"/>
     
-	<div class="container-article100">
+    {% endblock %}
+     #}
+{# <div class="container-article100">
 		<div class="wrap-article100">
 			<form class="article100-form validate-form">
 				<span class="article100-form-title">
@@ -98,7 +101,6 @@
 				</div>
 			</form>
 		</div>
-	</div>
-
+	</div> #}
 
 {% endblock %}
