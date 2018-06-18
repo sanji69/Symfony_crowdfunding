@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Form\ArticlesType;
+use App\Entity\Users;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -27,25 +27,50 @@ class DashboardController extends AbstractController
         // récupération des transaction
         $conts = $em->getRepository(Contributor::class)->findAll();
 
-        $form = $this->createForm(ArticlesType::class, $articles);
-
-
-        //activé articles
-//        if($form->handleRequest($request)->isSubmitted())
-//        {
-//            $em = $this->getDoctrine()->getManager();
-//
-//            $articles->setActived(1);
-//            $em->persist($articles);
-//
-//            $em->flush();
-//        }
-//        $form = $form->createView();
+        $user = $em->getRepository(Users::class)->findAll();
 
 
         return $this->render('dashboard/dashboard.html.twig', [
             'articles'=>$articles,
             'conts'=>$conts,
+            'users'=>$user,
         ]);
     }
+
+    /**
+     * @Route("/setadmin/{id}", name="set_admin", methods={"GET", "POST"})
+     */
+    public function  setAdminAction($id, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $users = $em
+            ->getRepository(Users::class)
+            ->find($id);
+
+        $users->setRoles('ROLE_ADMIN');
+        $em->persist($users);
+        $em->flush();
+
+        return $this->redirectToRoute("dashboard");
+
+    }
+
+    /**
+ * @Route("/setuser/{id}", name="set_user", methods={"GET", "POST"})
+ */
+    public function  setUserAction($id, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $users = $em
+            ->getRepository(Users::class)
+            ->find($id);
+
+        $users->setRoles('ROLE_USER');
+        $em->persist($users);
+        $em->flush();
+
+        return $this->redirectToRoute("dashboard");
+
+    }
 }
+

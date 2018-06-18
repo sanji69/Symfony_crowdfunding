@@ -53,13 +53,45 @@
             -o-text-overflow: ellipsis;
             text-overflow: ellipsis;
         }
+        .users {
+            -webkit-box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            box-sizing: content-box;
+            width: 75%;
+            margin: 5%;
+            padding: 5%;
+            overflow: hidden;
+            border: none;
+            -webkit-border-radius: 25px;
+            border-radius: 25px;
+            font: normal 16px/1 "Times New Roman", Times, serif;
+            color: rgba(255,255,255,1);
+            text-align: center;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            background: -webkit-linear-gradient(-90deg, rgba(210,244,146,1) 0, rgba(210,244,146,1) 54%, rgba(210,244,146,1) 55%, rgba(124,188,10,1) 100%), -webkit-repeating-radial-gradient(circle closest-side, rgba(210,244,146,1) 0, rgba(124,188,10,1) 100%);
+            background: -moz-linear-gradient(180deg, rgba(210,244,146,1) 0, rgba(210,244,146,1) 54%, rgba(210,244,146,1) 55%, rgba(124,188,10,1) 100%), -moz-repeating-radial-gradient(circle closest-side, rgba(210,244,146,1) 0, rgba(124,188,10,1) 100%);
+            background: linear-gradient(180deg, rgba(210,244,146,1) 0, rgba(210,244,146,1) 54%, rgba(210,244,146,1) 55%, rgba(124,188,10,1) 100%), repeating-radial-gradient(circle closest-side, rgba(210,244,146,1) 0, rgba(124,188,10,1) 100%);
+            background-position: 50% 48%, 50% 50%;
+            -webkit-background-origin: padding-box;
+            background-origin: padding-box;
+            -webkit-background-clip: border-box;
+            background-clip: border-box;
+            -webkit-background-size: auto auto;
+            background-size: auto auto;
+            -webkit-box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;
+            box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.2) ;
+        }
     </style>
 
 {%  endblock %}
 
 {% block body %}
 
+
     <form method="post" action="">
+        <div>
         {% for article in articles %}
             <div class="article">
                 <h3 class="title"> {{ article.title }}</h3>
@@ -91,8 +123,25 @@
                 {% endfor %}
             </div>
         {% endfor %}>
+        </div>
+        <div>
+            {% for user in users %}
+               <div class="users">
+                   <p>{{ user.username }}</p>
+                   {% if user.roles[0] ==  'ROLE_ADMIN' %}
+                       <p>Administrateur</p>
+                       <a href="{{ path('set_user', {'id': user.id}) }}" class="my_link">Passer Utilisateur</a>
+                   {% elseif user.roles[0] ==  'ROLE_USER' %}
+                       <p>Utilisateur</p>
+                       <a href="{{ path('set_admin', {'id': user.id}) }}" class="my_link">Passer Administrateur</a>
+                   {% endif %}
+               </div>
+            {% endfor %}
+        </div>
+
     </form>
-    <br>
+
+
 
 
 
