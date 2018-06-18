@@ -95,8 +95,6 @@ class ArticlesController extends Controller
             ->getRepository(Articles::class)
             ->find($id);
 
-
-
         $form = $this->createForm(ArticlesType::class, $article);
         if($form->handleRequest($request)->isSubmitted())
         {
@@ -132,22 +130,22 @@ class ArticlesController extends Controller
         return $this->render('articles/erase.html.twig');
     }
 
-    /**
-     * @Route("/search", name="ma_recherche", methods={"GET"})
-     */
-    public function searchAction(Request $request)
-    {
-        $q = $request->query->get('q'); // use "term" instead of "q" for jquery-ui
-        $results = $this->getDoctrine()->getRepository('App:Articles')->findLikeName($q);
+//    /**
+//     * @Route("/search", name="ma_recherche", methods={"GET"})
+//     */
+//    public function searchAction(Request $request)
+//    {
+//        $q = $request->query->get('q'); // use "term" instead of "q" for jquery-ui
+//        $results = $this->getDoctrine()->getRepository('App:Articles')->findLikeName($q);
+//
+//        return $this->render('search.json.twig', ['results' => $results]);
+//    }
 
-        return $this->render('search.json.twig', ['results' => $results]);
-    }
-
-    public function getArticles($id = null)
-    {
-        $article = $this->getDoctrine()->getRepository('App:Articles')->find($id);
-
-        return $this->json($article->getName());
-
-    }
+//    public function getArticles($id = null)
+//    {
+//        $article = $this->getDoctrine()->getRepository('App:Articles')->find($id);
+//
+//        return $this->json($article->getName());
+//
+//    }
 }
