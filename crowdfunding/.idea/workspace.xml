@@ -139,7 +139,7 @@
         <entry file="file://$PROJECT_DIR$/src/Controller/ArticlesController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="108" column="25" lean-forward="true" selection-start-line="108" selection-start-column="25" selection-end-line="108" selection-end-column="25" />
+              <caret line="108" column="25" selection-start-line="108" selection-start-column="25" selection-end-line="108" selection-end-column="25" />
               <folding>
                 <element signature="e#1928#1957#0#PHP" expanded="true" />
                 <element signature="e#2742#2752#0#PHP" expanded="true" />
@@ -151,8 +151,8 @@
       <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="62" column="31" lean-forward="true" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
+            <state relative-caret-position="204">
+              <caret line="45" column="49" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -471,12 +471,12 @@
       <workItem from="1529050162780" duration="2511000" />
       <workItem from="1529069661056" duration="5371000" />
       <workItem from="1529149308461" duration="14691000" />
-      <workItem from="1529305777137" duration="501000" />
+      <workItem from="1529305777137" duration="765000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135540000" />
+    <option name="totallyTimeSpent" value="135804000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -693,6 +693,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
           <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding>
+            <element signature="e#28#49#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -763,7 +766,7 @@
     <entry file="file://$PROJECT_DIR$/src/Controller/ArticlesController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="108" column="25" lean-forward="true" selection-start-line="108" selection-start-column="25" selection-end-line="108" selection-end-column="25" />
+          <caret line="108" column="25" selection-start-line="108" selection-start-column="25" selection-end-line="108" selection-end-column="25" />
           <folding>
             <element signature="e#1928#1957#0#PHP" expanded="true" />
             <element signature="e#2742#2752#0#PHP" expanded="true" />
@@ -773,8 +776,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="62" column="31" lean-forward="true" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
+        <state relative-caret-position="204">
+          <caret line="45" column="49" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
         </state>
       </provider>
     </entry>
