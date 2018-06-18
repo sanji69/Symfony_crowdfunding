@@ -18,17 +18,17 @@
             {{ form_start(form) }}
             {{ form_row(form.value) }}
             <button type="submit">Validez!</button>
-            {% if app.user is not empty and app.user.roles[0] == 'ROLE_ADMIN'  %}
-                <imput type="checkbox" >
-                    {% if article.actived == 0 %}
-                        Activez
-                    {% elseif article.actived == 1 %}
-                        Desactivez
-                    {% endif %}
-                </imput>
-            {% endif %}
             {{ form_end(form) }}
         {% endif %}
+
+        {% if app.user is not empty and app.user.roles[0] == 'ROLE_ADMIN'  %}
+            {% if article.actived == 0  %}
+                <a href="{{ path('activer', {'id': article.id}) }}">Activer</a>
+            {% elseif article.actived == 1 %}
+                <a href="{{ path('desactiver', {'id': article.id}) }}">Désactiver</a>
+            {% endif %}
+        {% endif %}
+        <br>
         <a href="{{ path('update', {'id': article.id}) }}">Modifier l'aricle</a>
     </div>
 

@@ -5,10 +5,10 @@ namespace App\Controller;
 use App\Entity\Contributor;
 use App\Form\ArticlesType;
 use App\Form\ContributorType;
-use App\Form\ArticlesActivedType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use App\Entity\Articles;
 use \DateTime;
 
@@ -79,6 +79,11 @@ class ArticlesController extends Controller
             ->getRepository(Articles::class)
             ->find($id);
 
+        if(!$article)
+        {
+            throw $this->createNotFoundException('Cette page n\'existe pas');
+        }
+
         $contrib = new Contributor();
         $form = $this->createForm(ContributorType::class, $contrib);
 
@@ -87,6 +92,7 @@ class ArticlesController extends Controller
             //ajout de la transaction en base de donnée
 
             $em = $this->getDoctrine()->getManager();
+
             $data = $form->getData();
             $user = $this->getUser();
             $contrib->setUsers($user);
@@ -103,18 +109,6 @@ class ArticlesController extends Controller
             $article->setStatus($status);
             $em->persist($article);
             $em->flush();
-
-        }
-        //mise a jour articles actived
-        $form2 = $this->createForm(ArticlesActivedType::class, $contrib);
-        $actived = $article->getActived();
-        if ($actived == 0)
-        {
-            $article->setActived(1);
-        }
-        else
-        {
-            $article->setActived(0);
         }
 
         return $this->render("articles/retrieve.html.twig",
@@ -124,10 +118,52 @@ class ArticlesController extends Controller
             ]);
     }
 
+    // route activation
+
+    /**
+     * @Route("/enable/{id}", name="activer", methods={"GET", "POST"})
+     */
+    public function enableAction($id, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $article = $em
+            ->getRepository(Articles::class)
+            ->find($id);
+
+        $article->setActived(1);
+        $em->persist($article);
+        $em->flush();
+
+        return $this->redirectToRoute("retrieve", [
+            "id"=>$id
+        ]);
+
+    }
+
+    // route désactivation
+
+    /**
+     * @Route("/disable/{id}", name="desactiver", methods={"GET", "POST"})
+     */
+    public function disableAction($id, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $article = $em
+            ->getRepository(Articles::class)
+            ->find($id);
+        $article->setActived(0);
+        $em->persist($article);
+        $em->flush();
+
+        return $this->redirectToRoute("retrieve", array(
+            "id"=> $id
+        ));
+    }
+
     /**
      * @Route("/update/{id}", name="update", methods={"GET", "POST"})
      */
-    public function updateAction(Request $request, $id)
+    public function updateAction($id, Request $request)
     {
         $em = $this->getDoctrine()->getManager();
 
