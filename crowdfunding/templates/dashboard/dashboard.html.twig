@@ -17,10 +17,11 @@
                      <p> Objectif : {{ article.status }} sur {{ article.goal }}</p>
                 {% endif %}
                 {% if article.actived == 0 %}
-                    <button id="enable">Activer</button>
+                    Activer
                 {% else %}
-                    <button id="disable">Désactiver</button>
+                    Désactiver
                 {% endif %}
+                <a href="{{ path('retrieve', {'id': article.id}) }}">Détail</a>
 
                 <p>Auteur : {{ article.user.username }}</p>
                 <h5>Contribution</h5>
