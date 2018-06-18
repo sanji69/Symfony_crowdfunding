@@ -1,9 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %} Bizmaker {% endblock %}
 
 {% block body %}
     <div>
+        {#{{ dump(article) }}#}
+
         <h2>{{ article.title }}</h2>
 
         <div>{{ article.content }}</div>
@@ -18,9 +20,7 @@
             <p>Actif</p>
         {% endif %}
         <p>Auteur : {{ article.user.username }}</p>
-        <a href="{{ path('articles/update.html.twig', {
-            "id":article.id
-        }) }}">Modifier l'aricle</a>
+        <a href="{{ path('update', {'id': article.id}) }}">Modifier l'aricle</a>
     </div>
 
 
