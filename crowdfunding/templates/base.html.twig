@@ -41,7 +41,9 @@
                     
                     	<ul>
                         	<li class="menu-item active"> <a class="nav-link" href="{{ path('index')}}" data-scroll>Accueil</a></li>
+                            {% if app.user.roles[0] == 'ROLE_ADMIN' %}
                             <li class="menu-item"> <a class="nav-link" href="{{ path('dashboard')}}" data-scroll>Administration</a></li>
+                            {% endif %}
                             <li class="menu-item"> <a class="nav-link" href="{{ path('index')}}" data-scroll>Recherchez un projet</a></li>
                             {% if app.user is not empty %}
                             <li class="menu-item"> <a class="nav-link" href="{{ path('security_logout')}}" data-scroll>Deconnexion</a></li>
