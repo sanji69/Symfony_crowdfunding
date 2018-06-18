@@ -53,8 +53,7 @@ class ArticlesController extends Controller
 
             $em->flush();
 
-                return $this->redirectToRoute("articles/retrieve.html.twig", [
-                   "title"=>$articles->getTitle(),
+                return $this->redirectToRoute("retrieve", [
                    "id"=>$articles->getId()
                ]);
         }
@@ -70,12 +69,12 @@ class ArticlesController extends Controller
     /**
      * @Route("/retrieve", name="retrieve", methods={"GET", "POST"})
      */
-    public function retrieveAction($title, $id)
+    public function retrieveAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
         $article = $em
-            ->getRepository('Articles')
+            ->getRepository(Articles::class)
             ->find($id);
 
 
@@ -110,7 +109,7 @@ class ArticlesController extends Controller
 
             $em->persist($article);
             $em->flush();
-            return $this->redirectToRoute('articles/retrieve.html.twig',
+            return $this->redirectToRoute('retrieve',
                 [
                     "title"=>$article->getTile(),
                     "id"=>$article->getId()
