@@ -17,9 +17,9 @@
                      <p> Objectif : {{ article.status }} sur {{ article.goal }}</p>
                 {% endif %}
                 {% if article.actived == 0 %}
-                    Activer
+                    Inactif
                 {% else %}
-                    Désactiver
+                    Actif
                 {% endif %}
                 <a href="{{ path('retrieve', {'id': article.id}) }}">Détail</a>
 

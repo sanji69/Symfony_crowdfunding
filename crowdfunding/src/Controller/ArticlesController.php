@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Entity\Contributor;
 use App\Form\ArticlesType;
 use App\Form\ContributorType;
-use App\Repository\ArticlesRepository;
+use App\Form\ArticlesActivedType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -103,6 +103,18 @@ class ArticlesController extends Controller
             $article->setStatus($status);
             $em->persist($article);
             $em->flush();
+
+        }
+        //mise a jour articles actived
+        $form2 = $this->createForm(ArticlesActivedType::class, $contrib);
+        $actived = $article->getActived();
+        if ($actived == 0)
+        {
+            $article->setActived(1);
+        }
+        else
+        {
+            $article->setActived(0);
         }
 
         return $this->render("articles/retrieve.html.twig",

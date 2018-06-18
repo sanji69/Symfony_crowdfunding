@@ -37,7 +37,7 @@ class ArticlesRepository extends ServiceEntityRepository
             ->where('a.actived = :val')
             ->setParameter('val', 1)
             ->orderBy('a.id', 'DESC')
-            ->setMaxResults(4)
+            ->setMaxResults(6)
             ->getQuery()
             ->getResult()
         ;
