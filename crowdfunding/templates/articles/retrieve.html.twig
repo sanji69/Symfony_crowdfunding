@@ -1,42 +1,53 @@
 {% extends 'base.html.twig' %}
+{% block stylesheet %}{% endblock %}
 
-{% block title %} Bizmaker {% endblock %}
+{% block title %}
+    Bizmaker
+{% endblock %}
 
 {% block body %}
-    <div>
 
-        <h2>{{ article.title }}</h2>
+    <div class="container6">
+        <div id="form-main">
+            <div id="form-div">
+                <h2 class="form-header">Info projet</h2>
+                <h2>{{ article.title }}</h2>
 
-        <div>{{ article.content }}</div>
-        {% if article.goal == article.status %}
-            <p>Objectif : Accomplis</p>
-        {%  else %}
-            <p> Objectif : {{ article.status }} sur {{ article.goal }}</p>
-        {% endif %}
-        <p>Auteur : {{ article.user.username }}</p>
-        {% if app.user is not empty %}
-            {{ form_start(form) }}
-            {{ form_row(form.value) }}
-            <button type="submit">Validez!</button>
-            {{ form_end(form) }}
-        {% endif %}
+                <div>{{ article.content }}</div>
+                {% if article.goal == article.status %}
+                    <p>Objectif : Accomplis</p>
+                {%  else %}
+                    <p>
+                        Objectif :
+                        {{ article.status }}
+                        sur
+                        {{ article.goal }}</p>
+                {% endif %}
+                <p>Auteur :
+                    {{ article.user.username }}</p>
+                {% if app.user is not empty %}
+                    {{ form_start(form) }}
+                    {{ form_row(form.value) }}
+                    <button type="submit" class="submit">Validez!</button>
+                    {{ form_end(form) }}
+                {% endif %}
 
-        {% if app.user is not empty and app.user.roles[0] == 'ROLE_ADMIN'  %}
-            {% if article.actived == 0  %}
-                <a href="{{ path('activer', {'id': article.id}) }}">Activer</a>
-            {% elseif article.actived == 1 %}
-                <a href="{{ path('desactiver', {'id': article.id}) }}">Désactiver</a>
-            {% endif %}
-        {% endif %}
-        <br>
-        {% if app.user is not empty %}
-            {% if app.user.roles[0] == 'ROLE_ADMIN' or app.user.id == article.user.id %}
-                <a href="{{ path('update', {'id': article.id}) }}">Modifier l'aricle</a>
-            {% endif %}
-        {% endif %}
-    </div>
+                {% if app.user is not empty and app.user.roles[0] == 'ROLE_ADMIN' %}
+                    {% if article.actived == 0 %}
+                        <a href="{{ path('activer', {'id': article.id}) }}" class="activer">Activer</a>
+                    {% elseif article.actived == 1 %}
+                        <a href="{{ path('desactiver', {'id': article.id}) }}"class="desactiver">Désactiver</a>
+                    {% endif %}
+                {% endif %}
+                <br>
+                {% if app.user is not empty %}
+                    {% if app.user.roles[0] == 'ROLE_ADMIN' or app.user.id == article.user.id %}
+                        <a href="{{ path('update', {'id': article.id}) }}"class="modifart">Modifier l'article</a>
+                    {% endif %}
+                {% endif %}
+            </div>
+            </div>
+            </div>
+            </div>
 
-
-
-
-{% endblock %}
+        {% endblock %}
