@@ -87,8 +87,11 @@ class MyFixture extends Fixture
         $i = rand(250, 1000);
         $v = rand(250, 1000);
         $article1 = new Articles();
-        $article1->setTitle('titre1');
-        $article1->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum');
+        $article1->setTitle('La Poste');
+        $article1->setContent('La Poste est issue des relais de poste créés par Louis XI en 1477 pour le transport des messages royaux et surtout des offices de messagers royaux créés en 1576 qui étaient autorisés à transporter le courrier des particuliers8.
+                                        C\'est au début du XVIIe siècle que date l\'origine de l\'administration des postes en France, avec la création de la « poste aux lettres », dirigée par le surintendant général des postes. À l\'époque, le port était payé par le destinataire.Le service a été organisé par 
+                                        l\'État pour sa communication interne et la transmission des ordres, des rapports, entre les différents échelons de son administration.En 1879 deux administrations, celle des postes et celle du télégraphe, sont fusionnées pour former l\'administration des postes et télégraphes. 
+                                        Les Postes, Télégraphes et Téléphones (PTT) sont rattachées au ministère des Postes et Télécommunications.');
         $article1->setGoal($i*$v);
         $article1->setStatus(1000);
         $article1->setUser($user1);
