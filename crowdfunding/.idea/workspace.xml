@@ -2,76 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09b9c695-40df-4821-a741-60120f26be81" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/crowdfunding.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/phpunit" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/dev/swiftmailer.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/dev/web_profiler.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/doctrine_migrations.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/prod/doctrine.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/swiftmailer.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/test/swiftmailer.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/test/web_profiler.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/translation.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes/annotations.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes/dev/twig.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes/dev/web_profiler.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/services_test.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phpunit.xml.dist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/ArticlesController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/Users/RegistrationController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataFixtures/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Articles.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Contributor.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Users.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventSubscriber/RegistrationNotifySubscriber.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Events.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/ArticlesActivedType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/ContributorType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/UsersType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/ArticlesRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/ContributorRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/UsersRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/articles/add.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/articles/erase.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/articles/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/articles/retrieve.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/articles/search.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/dashboard/dashboard.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/users/forgot.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/users/login.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/users/profile.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/users/register.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/users/retrieve.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/DefaultControllerTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Test.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.dist" beforeDir="false" afterPath="$PROJECT_DIR$/.env.dist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/framework.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/framework.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/MyFixture.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/MyFixture.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -136,8 +67,8 @@
       <file leaf-file-name="MyFixture.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DataFixtures/MyFixture.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="96" column="35" lean-forward="true" selection-start-line="96" selection-start-column="35" selection-end-line="96" selection-end-column="35" />
+            <state relative-caret-position="442">
+              <caret line="211" column="951" selection-start-line="211" selection-start-column="951" selection-end-line="211" selection-end-column="951" />
             </state>
           </provider>
         </entry>
@@ -493,12 +424,12 @@
       <workItem from="1529338365595" duration="2446000" />
       <workItem from="1529342253657" duration="1795000" />
       <workItem from="1529344703872" duration="3396000" />
-      <workItem from="1529393521348" duration="219000" />
+      <workItem from="1529393521348" duration="1105000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="161105000" />
+    <option name="totallyTimeSpent" value="162210000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -796,8 +727,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DataFixtures/MyFixture.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="96" column="35" lean-forward="true" selection-start-line="96" selection-start-column="35" selection-end-line="96" selection-end-column="35" />
+        <state relative-caret-position="442">
+          <caret line="211" column="951" selection-start-line="211" selection-start-column="951" selection-end-line="211" selection-end-column="951" />
         </state>
       </provider>
     </entry>
